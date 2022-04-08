@@ -1,0 +1,2484 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    103552,       2476]
+NotebookOptionsPosition[     99504,       2406]
+NotebookOutlinePosition[     99972,       2424]
+CellTagsIndexPosition[     99929,       2421]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.845717096555913*^9, 3.8457170970146847`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"49a41166-a298-4c58-9f92-a4e5847ad8ea"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "TensorTools`"}], ";"}], "\n", 
+ InterpretationBox[
+  RowBox[{"\"\<******************** \>\"", "\[InvisibleSpace]", 
+   StyleBox["\"\<TensorTools v0.0.1\>\"",
+    StripOnInput->False,
+    LineColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FrontFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    BackFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    GraphicsColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]], "\[InvisibleSpace]", 
+   "\"\< ********************\\nAuthor: Gustav Mogull, Humboldt University & \
+AEI Potsdam \\nSee ?TensorTools`tensors`* for a list of functions. \>\""}],
+  SequenceForm["******************** ", 
+   Style["TensorTools v0.0.1", {Bold, 
+     RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]}], 
+   " ********************\nAuthor: Gustav Mogull, Humboldt University & AEI \
+Potsdam \nSee ?TensorTools`tensors`* for a list of functions. "],
+  Editable->False], "\n", 
+ RowBox[{"?", "TensorTools`tensors`*"}], "\n", 
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["TensorTools`tensors`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], " ", 
+              StyleBox["TensorTools`tensors`", "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["basisExpand", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "basisExpand", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["declareIndexHead", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "declareIndexHead", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["declareVectorHead", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "declareVectorHead", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["eta", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "eta", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ixQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "ixQ", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["minPowerCount", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "minPowerCount", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["tensorQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "tensorQ", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["trL", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "trL", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["contract", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "contract", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["declareTensor", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "declareTensor", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["dot", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "dot", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["exposeIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "exposeIndex", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lI", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "lI", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["outer", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "outer", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["tensorRank", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "tensorRank", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["vectorQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "vectorQ", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["contractAtom", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "contractAtom", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["declareTensorHead", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "declareTensorHead", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["dressIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "dressIndex", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["freeIndices", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "freeIndices", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["massDim", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "massDim", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["setGlobalDim", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "setGlobalDim", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["toTensors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "toTensors", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$d", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "$d", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["declareIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "declareIndex", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["declareVector", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "declareVector", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["eps", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "eps", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["indexCoefficient", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "indexCoefficient", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["maxPowerCount", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "maxPowerCount", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["tensorDim", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "tensorDim", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["toTensorsAtom", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                   "toTensorsAtom", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], ""}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.11875]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"], "\n", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"setGlobalDim", "[", "4", "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"declareVectorHead", "[", "k", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"declareVectorHead", "[", "v", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"declareVector", "[", "z", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"declareVector", "[", "b", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"declareVector", "[", "q", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"declareIndexHead", "[", "i", "]"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"v", "/:", " ", 
+   RowBox[{"dot", "[", 
+    RowBox[{
+     RowBox[{"v", "[", "j_", "]"}], ",", 
+     RowBox[{"v", "[", "j_", "]"}]}], "]"}], "=", "1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "/:", " ", 
+   RowBox[{"dot", "[", 
+    RowBox[{
+     RowBox[{"v", "[", "1", "]"}], ",", 
+     RowBox[{"v", "[", "2", "]"}]}], "]"}], "=", "\[Gamma]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "/:", 
+   RowBox[{"dot", "[", 
+    RowBox[{"b", ",", "b"}], "]"}], "=", 
+   RowBox[{"-", 
+    RowBox[{"mB", "^", "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "/:", 
+   RowBox[{"dot", "[", 
+    RowBox[{"b", ",", 
+     RowBox[{"v", "[", "j_", "]"}]}], "]"}], "=", "0"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8431148486898384`*^9, 3.8431148700323534`*^9}, {
+   3.8444998330165844`*^9, 3.8444998365108423`*^9}, {3.845028474980839*^9, 
+   3.8450284799580173`*^9}, 3.845703258478565*^9, {3.847790616161282*^9, 
+   3.847790646501011*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"a2f294e8-91d9-40de-8d46-89f5db7f9c8f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"******************** \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"TensorTools v0.0.1\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FrontFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    BackFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    GraphicsColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]], 
+   "\[InvisibleSpace]", "\<\" ********************\\nAuthor: Gustav Mogull, \
+Humboldt University & AEI Potsdam \\nSee ?TensorTools`tensors`* for a list of \
+functions. \"\>"}],
+  SequenceForm["******************** ", 
+   Style["TensorTools v0.0.1", {Bold, 
+     RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]}], 
+   " ********************\nAuthor: Gustav Mogull, Humboldt University & AEI \
+Potsdam \nSee ?TensorTools`tensors`* for a list of functions. "],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.84779109785406*^9, 3.8477911400069*^9, 
+  3.847863916914806*^9, 3.847962442472542*^9, 3.847962594954118*^9, 
+  3.848123045425148*^9, 3.848571293000992*^9, 3.848571690977723*^9, 
+  3.8505494753179417`*^9, 3.850811237824679*^9, 3.850896295287457*^9, 
+  3.85089654969412*^9, 3.85089696681884*^9, 3.850907244526373*^9, 
+  3.8509800800766573`*^9, 3.850980359810281*^9, 3.851062635368041*^9, 
+  3.8510690378517237`*^9, 3.851069295017234*^9, 3.851069577071707*^9, 
+  3.853834195535593*^9, 3.8538342484610567`*^9, 3.85383486125539*^9, 
+  3.853836801318211*^9, 3.854007492526322*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"20fd2066-8d56-4b5b-a927-8eb3b49d1bdc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"******************** \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"TensorTools v0.0.1\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FrontFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    BackFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    GraphicsColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]], 
+   "\[InvisibleSpace]", "\<\" ********************\\nAuthor: Gustav Mogull, \
+Humboldt University & AEI Potsdam \\nSee ?TensorTools`tensors`* for a list of \
+functions. \"\>"}],
+  SequenceForm["******************** ", 
+   Style["TensorTools v0.0.1", {Bold, 
+     RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]}], 
+   " ********************\nAuthor: Gustav Mogull, Humboldt University & AEI \
+Potsdam \nSee ?TensorTools`tensors`* for a list of functions. "],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.8457172953449016`*^9, 3.8457177830734873`*^9, 3.8459936828491745`*^9, 
+   3.8459939488239403`*^9, 3.8460760158733253`*^9, {3.846085191427289*^9, 
+   3.846085213265654*^9}, 3.8460883729769506`*^9, 3.846090036104955*^9, 
+   3.846136780029219*^9, 3.8461368191702895`*^9, 3.8461389405885696`*^9, 
+   3.8461461288795567`*^9, 3.846159247143315*^9, 3.8462236768216534`*^9, 
+   3.846226000685013*^9, 3.8462273618182154`*^9, 3.8465812851988063`*^9, 
+   3.846590265575967*^9, {3.847790640848488*^9, 3.847790655020742*^9}, 
+   3.847790999360183*^9, 3.847791097857729*^9, 3.847791140049629*^9, 
+   3.8478639169570007`*^9, 3.84796244247515*^9, 3.84796259498659*^9, 
+   3.8481230454300213`*^9, 3.848571293022811*^9, 3.848571690989141*^9, 
+   3.850549475371221*^9, 3.850811237872348*^9, 3.850896295354227*^9, 
+   3.8508965497576027`*^9, 3.8508969668848667`*^9, 3.850907244528574*^9, 
+   3.850980080078953*^9, 3.850980359812809*^9, 3.851062635370305*^9, 
+   3.851069037854291*^9, 3.851069295023342*^9, 3.85106957707509*^9, 
+   3.853834195537644*^9, 3.853834248463253*^9, 3.853834861257968*^9, 
+   3.853836801320352*^9, 3.8540074925284567`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"8334d88d-cb35-4d6b-95c7-b7a5f8000732"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["TensorTools`tensors`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], " ", 
+              StyleBox["TensorTools`tensors`", "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["basisExpand", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "basisExpand", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["declareVectorHead", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "declareVectorHead", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ixQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "ixQ", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["tensorQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "tensorQ", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["contract", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "contract", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["dot", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "dot", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["lI", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "lI", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["tensorRank", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "tensorRank", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["contractAtom", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "contractAtom", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["dressIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "dressIndex", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["massDim", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "massDim", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["toTensors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "toTensors", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["declareIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "declareIndex", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["eps", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "eps", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["maxPowerCount", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "maxPowerCount", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["toTensorsAtom", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "toTensorsAtom", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["declareIndexHead", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "declareIndexHead", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["eta", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "eta", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["minPowerCount", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "minPowerCount", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["trL", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "trL", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["declareTensor", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "declareTensor", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["exposeIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "exposeIndex", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["outer", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "outer", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["vectorQ", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "vectorQ", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["declareTensorHead", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "declareTensorHead", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["freeIndices", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "freeIndices", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["setGlobalDim", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "setGlobalDim", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$d", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "$d", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["declareVector", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "declareVector", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["indexCoefficient", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "indexCoefficient", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["tensorDim", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-9173da88-a490-4660-be3c-1f4ec31a45c6", {
+                   "tensorDim", "TensorTools`tensors`"}, False},
+                 ButtonNote->"TensorTools`tensors`",
+                 Evaluator->Automatic], ""}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.2375]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
+ CellChangeTimes->{
+  3.8457172953449016`*^9, 3.8457177830734873`*^9, 3.8459936828491745`*^9, 
+   3.8459939488239403`*^9, 3.8460760158733253`*^9, {3.846085191427289*^9, 
+   3.846085213265654*^9}, 3.8460883729769506`*^9, 3.846090036104955*^9, 
+   3.846136780029219*^9, 3.8461368191702895`*^9, 3.8461389405885696`*^9, 
+   3.8461461288795567`*^9, 3.846159247143315*^9, 3.8462236768216534`*^9, 
+   3.846226000685013*^9, 3.8462273618182154`*^9, 3.8465812851988063`*^9, 
+   3.846590265575967*^9, {3.847790640848488*^9, 3.847790655020742*^9}, 
+   3.847790999360183*^9, 3.847791097857729*^9, 3.847791140049629*^9, 
+   3.8478639169570007`*^9, 3.84796244247515*^9, 3.84796259498659*^9, 
+   3.8481230454300213`*^9, 3.848571293022811*^9, 3.848571690989141*^9, 
+   3.850549475371221*^9, 3.850811237872348*^9, 3.850896295354227*^9, 
+   3.8508965497576027`*^9, 3.8508969668848667`*^9, 3.850907244528574*^9, 
+   3.850980080078953*^9, 3.850980359812809*^9, 3.851062635370305*^9, 
+   3.851069037854291*^9, 3.851069295023342*^9, 3.85106957707509*^9, 
+   3.853834195537644*^9, 3.853834248463253*^9, 3.853834861257968*^9, 
+   3.853836801320352*^9, 3.854007492596635*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"77346250-030a-482b-8fb1-1b345d089ac5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   DynamicModuleBox[{Typeset`open$$ = True}, 
+    PaneSelectorBox[{False->
+     ButtonBox[
+      RowBox[{"RowBox", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"DynamicBox", "[", 
+          RowBox[{"FEPrivate`FrontEndResource", "[", 
+           RowBox[{"\<\"FEBitmaps\"\>", ",", "\<\"RightPointerOpener\"\>"}], 
+           "]"}], "]"}], ",", "\<\"TensorTools`tensors`\"\>"}], "}"}], "]"}],
+      Appearance->None,
+      BaseStyle->"InformationGridLink",
+      ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+      Evaluator->Automatic,
+      Method->"Preemptive"], True->
+     PaneBox[
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         ButtonBox[
+          RowBox[{"RowBox", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"DynamicBox", "[", 
+              RowBox[{
+               RowBox[{"FEPrivate`FrontEndResource", "[", 
+                
+                RowBox[{"\<\"FEBitmaps\"\>", 
+                 ",", "\<\"DownPointerOpener\"\>"}], "]"}], ",", 
+               RowBox[{"ImageSizeCache", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"10.`", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"3.`", ",", "7.`"}], "}"}]}], "}"}]}]}], "]"}], 
+             ",", "\<\"TensorTools`tensors`\"\>"}], "}"}], "]"}],
+          Appearance->None,
+          BaseStyle->"InformationGridLink",
+          ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+          Evaluator->Automatic,
+          Method->"Preemptive"], "}"}], ",", 
+        RowBox[{"{", 
+         PaneBox[
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              ButtonBox["basisExpand",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "basisExpand", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["declareIndexHead",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "declareIndexHead", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["declareVectorHead",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "declareVectorHead", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["eta",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "eta", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["ixQ",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "ixQ", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["minPowerCount",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "minPowerCount", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["tensorQ",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "tensorQ", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["trL",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "trL", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              ButtonBox["contract",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "contract", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["declareTensor",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "declareTensor", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["dot",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "dot", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["exposeIndex",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "exposeIndex", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["lI",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "lI", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["outer",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "outer", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["tensorRank",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "tensorRank", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["vectorQ",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "vectorQ", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              ButtonBox["contractAtom",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "contractAtom", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["declareTensorHead",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "declareTensorHead", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["dressIndex",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "dressIndex", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["freeIndices",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "freeIndices", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["massDim",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "massDim", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["setGlobalDim",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "setGlobalDim", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["toTensors",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "toTensors", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["$d",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "$d", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              ButtonBox["declareIndex",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "declareIndex", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["declareVector",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "declareVector", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["eps",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "eps", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["indexCoefficient",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "indexCoefficient", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["maxPowerCount",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "maxPowerCount", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["tensorDim",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "tensorDim", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", 
+              ButtonBox["toTensorsAtom",
+               Appearance->None,
+               BaseStyle->"InformationGridLink",
+               
+               ButtonData:>{
+                "Info-0fcfadbb-6b54-4c07-a5bb-69c8478addb1", {
+                 "toTensorsAtom", "TensorTools`tensors`"}, False},
+               ButtonNote->"TensorTools`tensors`",
+               Evaluator->Automatic,
+               Method->"Preemptive"], ",", "Null"}], "}"}]}], "}"}],
+          ImageMargins->{{10, 0}, {0, 2}}], "}"}]}], "}"}],
+      FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+     ImageSize->Automatic],
+    DynamicModuleValues:>{}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8457172953449016`*^9, 3.8457177830734873`*^9, 3.8459936828491745`*^9, 
+   3.8459939488239403`*^9, 3.8460760158733253`*^9, {3.846085191427289*^9, 
+   3.846085213265654*^9}, 3.8460883729769506`*^9, 3.846090036104955*^9, 
+   3.846136780029219*^9, 3.8461368191702895`*^9, 3.8461389405885696`*^9, 
+   3.8461461288795567`*^9, 3.846159247143315*^9, 3.8462236768216534`*^9, 
+   3.846226000685013*^9, 3.8462273618182154`*^9, 3.8465812851988063`*^9, 
+   3.846590265575967*^9, {3.847790640848488*^9, 3.847790655020742*^9}, 
+   3.847790999360183*^9, 3.847791097857729*^9, 3.847791140049629*^9, 
+   3.8478639169570007`*^9, 3.84796244247515*^9, 3.84796259498659*^9, 
+   3.8481230454300213`*^9, 3.848571293022811*^9, 3.848571690989141*^9, 
+   3.850549475371221*^9, 3.850811237872348*^9, 3.850896295354227*^9, 
+   3.8508965497576027`*^9, 3.8508969668848667`*^9, 3.850907244528574*^9, 
+   3.850980080078953*^9, 3.850980359812809*^9, 3.851062635370305*^9, 
+   3.851069037854291*^9, 3.851069295023342*^9, 3.85106957707509*^9, 
+   3.853834195537644*^9, 3.853834248463253*^9, 3.853834861257968*^9, 
+   3.853836801320352*^9, 3.85400749262879*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"71723f00-0cdd-4505-bd52-db6f7a30e746"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"k declared as a 4-dimensional Lorentz vector header.\"\>"], \
+"Print",
+ CellChangeTimes->{3.84779109785406*^9, 3.8477911400069*^9, 
+  3.847863916914806*^9, 3.847962442472542*^9, 3.847962594954118*^9, 
+  3.848123045425148*^9, 3.848571293000992*^9, 3.848571690977723*^9, 
+  3.8505494753179417`*^9, 3.850811237824679*^9, 3.850896295287457*^9, 
+  3.85089654969412*^9, 3.85089696681884*^9, 3.850907244526373*^9, 
+  3.8509800800766573`*^9, 3.850980359810281*^9, 3.851062635368041*^9, 
+  3.8510690378517237`*^9, 3.851069295017234*^9, 3.851069577071707*^9, 
+  3.853834195535593*^9, 3.8538342484610567`*^9, 3.85383486125539*^9, 
+  3.853836801318211*^9, 3.8540074926494827`*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"403cd1fa-f0a2-4f68-98e5-68885f199801"],
+
+Cell[BoxData["\<\"v declared as a 4-dimensional Lorentz vector header.\"\>"], \
+"Print",
+ CellChangeTimes->{3.84779109785406*^9, 3.8477911400069*^9, 
+  3.847863916914806*^9, 3.847962442472542*^9, 3.847962594954118*^9, 
+  3.848123045425148*^9, 3.848571293000992*^9, 3.848571690977723*^9, 
+  3.8505494753179417`*^9, 3.850811237824679*^9, 3.850896295287457*^9, 
+  3.85089654969412*^9, 3.85089696681884*^9, 3.850907244526373*^9, 
+  3.8509800800766573`*^9, 3.850980359810281*^9, 3.851062635368041*^9, 
+  3.8510690378517237`*^9, 3.851069295017234*^9, 3.851069577071707*^9, 
+  3.853834195535593*^9, 3.8538342484610567`*^9, 3.85383486125539*^9, 
+  3.853836801318211*^9, 3.8540074926513433`*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"53c181e9-8bc5-4998-b9fd-7213b2f76a12"],
+
+Cell[BoxData["\<\"z declared as a 4-dimensional Lorentz vector.\"\>"], "Print",
+ CellChangeTimes->{3.84779109785406*^9, 3.8477911400069*^9, 
+  3.847863916914806*^9, 3.847962442472542*^9, 3.847962594954118*^9, 
+  3.848123045425148*^9, 3.848571293000992*^9, 3.848571690977723*^9, 
+  3.8505494753179417`*^9, 3.850811237824679*^9, 3.850896295287457*^9, 
+  3.85089654969412*^9, 3.85089696681884*^9, 3.850907244526373*^9, 
+  3.8509800800766573`*^9, 3.850980359810281*^9, 3.851062635368041*^9, 
+  3.8510690378517237`*^9, 3.851069295017234*^9, 3.851069577071707*^9, 
+  3.853834195535593*^9, 3.8538342484610567`*^9, 3.85383486125539*^9, 
+  3.853836801318211*^9, 3.8540074926538887`*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"644d2f83-ac8d-4a0a-b681-fa80eeddc91f"],
+
+Cell[BoxData["\<\"b declared as a 4-dimensional Lorentz vector.\"\>"], "Print",
+ CellChangeTimes->{3.84779109785406*^9, 3.8477911400069*^9, 
+  3.847863916914806*^9, 3.847962442472542*^9, 3.847962594954118*^9, 
+  3.848123045425148*^9, 3.848571293000992*^9, 3.848571690977723*^9, 
+  3.8505494753179417`*^9, 3.850811237824679*^9, 3.850896295287457*^9, 
+  3.85089654969412*^9, 3.85089696681884*^9, 3.850907244526373*^9, 
+  3.8509800800766573`*^9, 3.850980359810281*^9, 3.851062635368041*^9, 
+  3.8510690378517237`*^9, 3.851069295017234*^9, 3.851069577071707*^9, 
+  3.853834195535593*^9, 3.8538342484610567`*^9, 3.85383486125539*^9, 
+  3.853836801318211*^9, 3.854007492655072*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"5a901721-c835-4d54-9bec-05efbfb75ed1"],
+
+Cell[BoxData["\<\"q declared as a 4-dimensional Lorentz vector.\"\>"], "Print",
+ CellChangeTimes->{3.84779109785406*^9, 3.8477911400069*^9, 
+  3.847863916914806*^9, 3.847962442472542*^9, 3.847962594954118*^9, 
+  3.848123045425148*^9, 3.848571293000992*^9, 3.848571690977723*^9, 
+  3.8505494753179417`*^9, 3.850811237824679*^9, 3.850896295287457*^9, 
+  3.85089654969412*^9, 3.85089696681884*^9, 3.850907244526373*^9, 
+  3.8509800800766573`*^9, 3.850980359810281*^9, 3.851062635368041*^9, 
+  3.8510690378517237`*^9, 3.851069295017234*^9, 3.851069577071707*^9, 
+  3.853834195535593*^9, 3.8538342484610567`*^9, 3.85383486125539*^9, 
+  3.853836801318211*^9, 3.8540074926561403`*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"8ce39d85-0956-4c75-ae15-fec2c2fbd94b"],
+
+Cell[BoxData["\<\"i declared as an index header.\"\>"], "Print",
+ CellChangeTimes->{3.84779109785406*^9, 3.8477911400069*^9, 
+  3.847863916914806*^9, 3.847962442472542*^9, 3.847962594954118*^9, 
+  3.848123045425148*^9, 3.848571293000992*^9, 3.848571690977723*^9, 
+  3.8505494753179417`*^9, 3.850811237824679*^9, 3.850896295287457*^9, 
+  3.85089654969412*^9, 3.85089696681884*^9, 3.850907244526373*^9, 
+  3.8509800800766573`*^9, 3.850980359810281*^9, 3.851062635368041*^9, 
+  3.8510690378517237`*^9, 3.851069295017234*^9, 3.851069577071707*^9, 
+  3.853834195535593*^9, 3.8538342484610567`*^9, 3.85383486125539*^9, 
+  3.853836801318211*^9, 3.854007492657154*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"72f8681b-37c8-4d7d-baac-8e1d9409f8b5"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$Assumptions", "=", 
+  RowBox[{
+   RowBox[{"mQ", ">", "0"}], "&&", 
+   RowBox[{"mQ", "\[Element]", "Reals"}], " ", "&&", " ", 
+   RowBox[{"mB", ">", "0"}], "&&", 
+   RowBox[{"mB", "\[Element]", "Reals"}]}]}]], "Input",
+ CellChangeTimes->{{3.845643101937729*^9, 3.8456431202175307`*^9}, {
+  3.845703367990178*^9, 3.845703374306472*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"7e524d7d-b2b3-47ec-8806-dd0c77060105"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mQ", ">", "0"}], "&&", 
+  RowBox[{"mQ", "\[Element]", 
+   TemplateBox[{},
+    "Reals"]}], "&&", 
+  RowBox[{"mB", ">", "0"}], "&&", 
+  RowBox[{"mB", "\[Element]", 
+   TemplateBox[{},
+    "Reals"]}]}]], "Output",
+ CellChangeTimes->{
+  3.8456431378268137`*^9, 3.8456569045350213`*^9, 3.8456571372381287`*^9, 
+   3.845657348173892*^9, 3.845657602543459*^9, 3.8456579170688524`*^9, 
+   3.8456621950334806`*^9, 3.8456626890219865`*^9, 3.8457036966029415`*^9, 
+   3.8457130296375456`*^9, 3.8457148925313225`*^9, 3.84571729582761*^9, 
+   3.8457177834903636`*^9, 3.84599368323215*^9, 3.845993949402381*^9, 
+   3.8460760166352882`*^9, {3.846085192155553*^9, 3.846085214265846*^9}, 
+   3.8460883736900206`*^9, 3.8460900369167867`*^9, 3.8461367808151183`*^9, 
+   3.8461368204249306`*^9, 3.846138941428951*^9, 3.8461461295208397`*^9, 
+   3.8461592477660303`*^9, 3.846223677308351*^9, 3.846226001058075*^9, 
+   3.8462273622720003`*^9, 3.8465812857896304`*^9, 3.846590266021146*^9, 
+   3.847790999430682*^9, 3.8477910980347767`*^9, 3.8477911402493057`*^9, 
+   3.847863917190646*^9, 3.847962442640533*^9, 3.847962595136067*^9, 
+   3.848123045628186*^9, 3.848571293284267*^9, 3.848571691791873*^9, 
+   3.8505494756355953`*^9, 3.85081123814545*^9, 3.85089629571285*^9, 
+   3.850896550551764*^9, 3.850896967311846*^9, 3.850907244717374*^9, 
+   3.850980080432353*^9, 3.850980360143148*^9, 3.851062635732403*^9, 
+   3.851069038244444*^9, 3.85106929552601*^9, 3.851069577505022*^9, 
+   3.8538341957677727`*^9, 3.853834248619607*^9, 3.853834861428442*^9, 
+   3.853836801463893*^9, 3.8540074928230543`*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"e858221f-8856-4eb5-ab52-5387c3ef26b5"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sectorm12m2", "=", 
+   RowBox[{"SeriesCoefficient", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", "\"\<resultm12m2.wl\>\"", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", "0", ",", "0"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sectorm1m22", "=", 
+   RowBox[{"SeriesCoefficient", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", "\"\<resultm1m22.wl\>\"", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", "0", ",", "0"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sectorm1m2", "=", 
+   RowBox[{"SeriesCoefficient", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", "\"\<resultm1m2.wl\>\"", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Epsilon]", ",", "0", ",", "0"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sectorm13", "=", 
+   RowBox[{"Import", "[", "\"\<resultm13.wl\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sectorm23", "=", 
+   RowBox[{"Import", "[", "\"\<resultm23.wl\>\"", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8457172151467514`*^9, 3.845717275366796*^9}, {
+  3.845717741246936*^9, 3.845717770708047*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"0270e3f9-ccfe-400e-b7fb-6b12ff3759d4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"reCE", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Kappa]E", "\[Equal]", 
+        RowBox[{"\[Lambda]E", "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"cE", "[", "1", "]"}], "+", 
+            RowBox[{"cE", "[", "2", "]"}]}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"G", "^", "4"}], "*", 
+            RowBox[{"M", "^", "5"}]}], ")"}]}]}]}], ",", 
+       RowBox[{"\[Lambda]E", "\[Equal]", 
+        RowBox[{
+         RowBox[{"1", "/", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"G", "^", "4"}], "*", 
+            RowBox[{"M", "^", "5"}]}], ")"}]}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"m", "[", "2", "]"}], "*", 
+            RowBox[{
+             RowBox[{"cE", "[", "1", "]"}], "/", 
+             RowBox[{"m", "[", "1", "]"}]}]}], "+", 
+           RowBox[{
+            RowBox[{"m", "[", "1", "]"}], "*", 
+            RowBox[{
+             RowBox[{"cE", "[", "2", "]"}], "/", 
+             RowBox[{"m", "[", "2", "]"}]}]}]}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"cE", "[", "1", "]"}], ",", 
+       RowBox[{"cE", "[", "2", "]"}]}], "}"}]}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"reCB", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Kappa]B", "*", 
+         RowBox[{"G", "^", "4"}], "*", 
+         RowBox[{"M", "^", "4"}]}], "==", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"cB", "[", "1", "]"}], "/", 
+          RowBox[{"m", "[", "1", "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"cB", "[", "2", "]"}], "/", 
+          RowBox[{"m", "[", "2", "]"}]}]}]}], ",", 
+       RowBox[{"\[Lambda]B", "\[Equal]", 
+        RowBox[{
+         RowBox[{"1", "/", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"G", "^", "4"}], "*", 
+            RowBox[{"M", "^", "5"}]}], ")"}]}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"m", "[", "2", "]"}], "*", 
+            RowBox[{
+             RowBox[{"cB", "[", "1", "]"}], "/", 
+             RowBox[{"m", "[", "1", "]"}]}]}], "+", 
+           RowBox[{
+            RowBox[{"m", "[", "1", "]"}], "*", 
+            RowBox[{
+             RowBox[{"cB", "[", "2", "]"}], "/", 
+             RowBox[{"m", "[", "2", "]"}]}]}]}], ")"}]}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"cB", "[", "1", "]"}], ",", 
+       RowBox[{"cB", "[", "2", "]"}]}], "}"}]}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"reM", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"m", "[", "1", "]"}], "+", 
+         RowBox[{"m", "[", "2", "]"}]}], "==", "M"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"m", "[", "1", "]"}], "*", 
+         RowBox[{
+          RowBox[{"m", "[", "2", "]"}], "/", "M"}]}], "\[Equal]", "\[Mu]"}]}],
+       "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"m", "[", "1", "]"}], ",", 
+       RowBox[{"m", "[", "2", "]"}]}], "}"}]}], "]"}], "[", 
+   RowBox[{"[", "2", "]"}], "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.8459916775927534`*^9, 3.8459917964873486`*^9}, {
+   3.845993153941243*^9, 3.8459931697291045`*^9}, {3.8459939334776278`*^9, 
+   3.8459939340931845`*^9}, 3.847791129107553*^9},
+ CellLabel->"In[25]:=",ExpressionUUID->"a4705cdf-ac0d-4ec2-8aff-2a26eda83211"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"cE", "[", "1", "]"}], "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["G", "4"], " ", 
+      SuperscriptBox["M", "5"], " ", 
+      RowBox[{"m", "[", "1", "]"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Kappa]E", " ", 
+         RowBox[{"m", "[", "1", "]"}]}], "-", 
+        RowBox[{"\[Lambda]E", " ", 
+         RowBox[{"m", "[", "1", "]"}]}], "-", 
+        RowBox[{"\[Lambda]E", " ", 
+         RowBox[{"m", "[", "2", "]"}]}]}], ")"}]}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"m", "[", "1", "]"}], "2"], "-", 
+      SuperscriptBox[
+       RowBox[{"m", "[", "2", "]"}], "2"]}]]}], ",", 
+   RowBox[{
+    RowBox[{"cE", "[", "2", "]"}], "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["G", "4"], " ", 
+      SuperscriptBox["M", "5"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"\[Lambda]E", " ", 
+         RowBox[{"m", "[", "1", "]"}], " ", 
+         RowBox[{"m", "[", "2", "]"}]}], "-", 
+        RowBox[{"\[Kappa]E", " ", 
+         SuperscriptBox[
+          RowBox[{"m", "[", "2", "]"}], "2"]}], "+", 
+        RowBox[{"\[Lambda]E", " ", 
+         SuperscriptBox[
+          RowBox[{"m", "[", "2", "]"}], "2"]}]}], ")"}]}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"m", "[", "1", "]"}], "2"], "-", 
+      SuperscriptBox[
+       RowBox[{"m", "[", "2", "]"}], "2"]}]]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.845993052253541*^9, 3.845993170610201*^9, 3.8459936835802193`*^9, {
+   3.8459939380141363`*^9, 3.8459939511911507`*^9}, 3.846076017368329*^9, {
+   3.8460851930546627`*^9, 3.8460852149817095`*^9}, 3.846088374485891*^9, 
+   3.846090037465211*^9, 3.8461367813848343`*^9, 3.846136821509487*^9, 
+   3.8461389420025063`*^9, 3.846146130232938*^9, 3.8461592496468573`*^9, 
+   3.846223677915727*^9, 3.8462260014100204`*^9, 3.8462273627138186`*^9, 
+   3.846581286234078*^9, 3.846590268104494*^9, 3.847790999656817*^9, 
+   3.847791098265647*^9, 3.847791140533554*^9, 3.8478639178415613`*^9, 
+   3.8479624429254313`*^9, 3.847962595384243*^9, 3.848123045814073*^9, 
+   3.848571293519929*^9, 3.8485716922763643`*^9, 3.850549475893062*^9, 
+   3.850811238476099*^9, 3.850896296230301*^9, 3.850896551017433*^9, 
+   3.850896967824469*^9, 3.850907245097986*^9, 3.850980080729639*^9, 
+   3.85098036037118*^9, 3.851062636031479*^9, 3.851069038556088*^9, 
+   3.851069295949889*^9, 3.851069577911352*^9, 3.8538341961731977`*^9, 
+   3.853834248953315*^9, 3.8538348617735043`*^9, 3.853836801744939*^9, 
+   3.854007493042913*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"2b66b485-fa92-4cdb-bf5e-915a4f0d5736"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"cB", "[", "1", "]"}], "\[Rule]", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["G", "4"], " ", 
+       SuperscriptBox["M", "4"], " ", 
+       RowBox[{"m", "[", "1", "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"M", " ", "\[Lambda]B"}], "-", 
+         RowBox[{"\[Kappa]B", " ", 
+          RowBox[{"m", "[", "1", "]"}]}]}], ")"}]}], 
+      RowBox[{
+       RowBox[{"m", "[", "1", "]"}], "-", 
+       RowBox[{"m", "[", "2", "]"}]}]]}]}], ",", 
+   RowBox[{
+    RowBox[{"cB", "[", "2", "]"}], "\[Rule]", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["G", "4"], " ", 
+        SuperscriptBox["M", "5"], " ", "\[Lambda]B", " ", 
+        RowBox[{"m", "[", "2", "]"}]}], "-", 
+       RowBox[{
+        SuperscriptBox["G", "4"], " ", 
+        SuperscriptBox["M", "4"], " ", "\[Kappa]B", " ", 
+        SuperscriptBox[
+         RowBox[{"m", "[", "2", "]"}], "2"]}]}], 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"m", "[", "1", "]"}]}], "+", 
+       RowBox[{"m", "[", "2", "]"}]}]]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.845993052253541*^9, 3.845993170610201*^9, 3.8459936835802193`*^9, {
+   3.8459939380141363`*^9, 3.8459939511911507`*^9}, 3.846076017368329*^9, {
+   3.8460851930546627`*^9, 3.8460852149817095`*^9}, 3.846088374485891*^9, 
+   3.846090037465211*^9, 3.8461367813848343`*^9, 3.846136821509487*^9, 
+   3.8461389420025063`*^9, 3.846146130232938*^9, 3.8461592496468573`*^9, 
+   3.846223677915727*^9, 3.8462260014100204`*^9, 3.8462273627138186`*^9, 
+   3.846581286234078*^9, 3.846590268104494*^9, 3.847790999656817*^9, 
+   3.847791098265647*^9, 3.847791140533554*^9, 3.8478639178415613`*^9, 
+   3.8479624429254313`*^9, 3.847962595384243*^9, 3.848123045814073*^9, 
+   3.848571293519929*^9, 3.8485716922763643`*^9, 3.850549475893062*^9, 
+   3.850811238476099*^9, 3.850896296230301*^9, 3.850896551017433*^9, 
+   3.850896967824469*^9, 3.850907245097986*^9, 3.850980080729639*^9, 
+   3.85098036037118*^9, 3.851062636031479*^9, 3.851069038556088*^9, 
+   3.851069295949889*^9, 3.851069577911352*^9, 3.8538341961731977`*^9, 
+   3.853834248953315*^9, 3.8538348617735043`*^9, 3.853836801744939*^9, 
+   3.854007493060907*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"1cf1a0c2-11a2-4b93-951f-48f0beceb141"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"m", "[", "1", "]"}], "\[Rule]", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{"M", "+", 
+       RowBox[{
+        SqrtBox["M"], " ", 
+        SqrtBox[
+         RowBox[{"M", "-", 
+          RowBox[{"4", " ", "\[Mu]"}]}]]}]}], ")"}]}]}], ",", 
+   RowBox[{
+    RowBox[{"m", "[", "2", "]"}], "\[Rule]", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{"M", "-", 
+       RowBox[{
+        SqrtBox["M"], " ", 
+        SqrtBox[
+         RowBox[{"M", "-", 
+          RowBox[{"4", " ", "\[Mu]"}]}]]}]}], ")"}]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.845993052253541*^9, 3.845993170610201*^9, 3.8459936835802193`*^9, {
+   3.8459939380141363`*^9, 3.8459939511911507`*^9}, 3.846076017368329*^9, {
+   3.8460851930546627`*^9, 3.8460852149817095`*^9}, 3.846088374485891*^9, 
+   3.846090037465211*^9, 3.8461367813848343`*^9, 3.846136821509487*^9, 
+   3.8461389420025063`*^9, 3.846146130232938*^9, 3.8461592496468573`*^9, 
+   3.846223677915727*^9, 3.8462260014100204`*^9, 3.8462273627138186`*^9, 
+   3.846581286234078*^9, 3.846590268104494*^9, 3.847790999656817*^9, 
+   3.847791098265647*^9, 3.847791140533554*^9, 3.8478639178415613`*^9, 
+   3.8479624429254313`*^9, 3.847962595384243*^9, 3.848123045814073*^9, 
+   3.848571293519929*^9, 3.8485716922763643`*^9, 3.850549475893062*^9, 
+   3.850811238476099*^9, 3.850896296230301*^9, 3.850896551017433*^9, 
+   3.850896967824469*^9, 3.850907245097986*^9, 3.850980080729639*^9, 
+   3.85098036037118*^9, 3.851062636031479*^9, 3.851069038556088*^9, 
+   3.851069295949889*^9, 3.851069577911352*^9, 3.8538341961731977`*^9, 
+   3.853834248953315*^9, 3.8538348617735043`*^9, 3.853836801744939*^9, 
+   3.8540074930633574`*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"f979d65a-0986-4641-a446-49c3e55ef72c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"\[CapitalGamma]", "=", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{"1", "+", 
+    RowBox[{"2", "*", "\[Nu]", "*", 
+     RowBox[{"(", 
+      RowBox[{"\[Gamma]", "-", "1"}], ")"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"pi", "=", 
+  RowBox[{"\[Mu]", "*", 
+   RowBox[{
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{"\[Gamma]", "^", "2"}], "-", "1"}], "]"}], "/", 
+    "\[CapitalGamma]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"j", "=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"G", "*", "M", "*", 
+     RowBox[{"\[Mu]", "/", 
+      RowBox[{"(", 
+       RowBox[{"pi", "*", "mB"}], ")"}]}]}], ")"}], "^", 
+   RowBox[{"(", 
+    RowBox[{"-", "1"}], ")"}]}]}]}], "Input",
+ CellLabel->"In[28]:=",ExpressionUUID->"adc8cf7c-d23e-4c0d-aace-ad952863c692"],
+
+Cell[BoxData[
+ SqrtBox[
+  RowBox[{"1", "+", 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], " ", 
+    "\[Nu]"}]}]]], "Output",
+ CellChangeTimes->{
+  3.8459930523652782`*^9, 3.8459936837547536`*^9, 3.845993951307866*^9, 
+   3.846076017481924*^9, {3.846085193418254*^9, 3.846085215117937*^9}, 
+   3.8460883748279753`*^9, 3.8460900376006203`*^9, 3.8461367815140095`*^9, 
+   3.846136821678656*^9, 3.846138942139737*^9, 3.8461461303795424`*^9, 
+   3.846159249771525*^9, 3.846223678193983*^9, 3.8462260015251904`*^9, 
+   3.846227362844471*^9, 3.846581286509665*^9, 3.846590268278263*^9, 
+   3.847791140606517*^9, 3.8478639231691732`*^9, 3.847962442971739*^9, 
+   3.847962595528124*^9, 3.848123045873987*^9, 3.848571293562537*^9, 
+   3.848571692325886*^9, 3.850549475943652*^9, 3.850811238546236*^9, 
+   3.850896296334868*^9, 3.8508965512773523`*^9, 3.850896967968635*^9, 
+   3.850907245167398*^9, 3.85098008080024*^9, 3.850980360440794*^9, 
+   3.8510626361031847`*^9, 3.8510690386388607`*^9, 3.8510692960631742`*^9, 
+   3.851069578009409*^9, 3.853834196227316*^9, 3.853834249008363*^9, 
+   3.853834861832664*^9, 3.8538368017902937`*^9, 3.854007493084722*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"3302fbdb-3214-4d28-8366-b677cbba3a77"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SqrtBox[
+    RowBox[{
+     RowBox[{"-", "1"}], "+", 
+     SuperscriptBox["\[Gamma]", "2"]}]], " ", "\[Mu]"}], 
+  SqrtBox[
+   RowBox[{"1", "+", 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], " ", 
+     "\[Nu]"}]}]]]], "Output",
+ CellChangeTimes->{
+  3.8459930523652782`*^9, 3.8459936837547536`*^9, 3.845993951307866*^9, 
+   3.846076017481924*^9, {3.846085193418254*^9, 3.846085215117937*^9}, 
+   3.8460883748279753`*^9, 3.8460900376006203`*^9, 3.8461367815140095`*^9, 
+   3.846136821678656*^9, 3.846138942139737*^9, 3.8461461303795424`*^9, 
+   3.846159249771525*^9, 3.846223678193983*^9, 3.8462260015251904`*^9, 
+   3.846227362844471*^9, 3.846581286509665*^9, 3.846590268278263*^9, 
+   3.847791140606517*^9, 3.8478639231691732`*^9, 3.847962442971739*^9, 
+   3.847962595528124*^9, 3.848123045873987*^9, 3.848571293562537*^9, 
+   3.848571692325886*^9, 3.850549475943652*^9, 3.850811238546236*^9, 
+   3.850896296334868*^9, 3.8508965512773523`*^9, 3.850896967968635*^9, 
+   3.850907245167398*^9, 3.85098008080024*^9, 3.850980360440794*^9, 
+   3.8510626361031847`*^9, 3.8510690386388607`*^9, 3.8510692960631742`*^9, 
+   3.851069578009409*^9, 3.853834196227316*^9, 3.853834249008363*^9, 
+   3.853834861832664*^9, 3.8538368017902937`*^9, 3.854007493086607*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"253ad2fb-b9c9-436f-b7cf-ed664342572a"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"mB", " ", 
+   SqrtBox[
+    RowBox[{
+     RowBox[{"-", "1"}], "+", 
+     SuperscriptBox["\[Gamma]", "2"]}]]}], 
+  RowBox[{"G", " ", "M", " ", 
+   SqrtBox[
+    RowBox[{"1", "+", 
+     RowBox[{"2", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], " ", 
+      "\[Nu]"}]}]]}]]], "Output",
+ CellChangeTimes->{
+  3.8459930523652782`*^9, 3.8459936837547536`*^9, 3.845993951307866*^9, 
+   3.846076017481924*^9, {3.846085193418254*^9, 3.846085215117937*^9}, 
+   3.8460883748279753`*^9, 3.8460900376006203`*^9, 3.8461367815140095`*^9, 
+   3.846136821678656*^9, 3.846138942139737*^9, 3.8461461303795424`*^9, 
+   3.846159249771525*^9, 3.846223678193983*^9, 3.8462260015251904`*^9, 
+   3.846227362844471*^9, 3.846581286509665*^9, 3.846590268278263*^9, 
+   3.847791140606517*^9, 3.8478639231691732`*^9, 3.847962442971739*^9, 
+   3.847962595528124*^9, 3.848123045873987*^9, 3.848571293562537*^9, 
+   3.848571692325886*^9, 3.850549475943652*^9, 3.850811238546236*^9, 
+   3.850896296334868*^9, 3.8508965512773523`*^9, 3.850896967968635*^9, 
+   3.850907245167398*^9, 3.85098008080024*^9, 3.850980360440794*^9, 
+   3.8510626361031847`*^9, 3.8510690386388607`*^9, 3.8510692960631742`*^9, 
+   3.851069578009409*^9, 3.853834196227316*^9, 3.853834249008363*^9, 
+   3.853834861832664*^9, 3.8538368017902937`*^9, 3.854007493088418*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"f62cb874-0f70-446d-a00e-4e7211fc6395"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"c1", "=", "1"}]], "Input",
+ CellChangeTimes->{{3.846090047434163*^9, 3.846090048798608*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"5df20cd7-9dea-4592-b5fa-660b696ad32f"],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.8460900494074726`*^9, 3.846136781633835*^9, 
+  3.846136821792106*^9, 3.8461389422884893`*^9, 3.8461461306915283`*^9, 
+  3.846159249879238*^9, 3.8462236785031557`*^9, 3.8462260016580105`*^9, 
+  3.846227362952185*^9, 3.846581286641182*^9, 3.8465902683659286`*^9, 
+  3.847791140740818*^9, 3.8478639233697147`*^9, 3.847962442991939*^9, 
+  3.84796259556951*^9, 3.848123045908503*^9, 3.848571293582775*^9, 
+  3.848571692352558*^9, 3.850549475971385*^9, 3.8508112385827007`*^9, 
+  3.850896296391795*^9, 3.8508965513588943`*^9, 3.850896968045479*^9, 
+  3.850907245204124*^9, 3.850980080837241*^9, 3.850980360478204*^9, 
+  3.851062636142665*^9, 3.85106903868675*^9, 3.851069296127282*^9, 
+  3.851069578072153*^9, 3.853834196253929*^9, 3.853834249038507*^9, 
+  3.85383486186217*^9, 3.853836801815242*^9, 3.854007493111743*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"9bd4ea9e-aed3-47e2-893d-b5ea1b9a2f2d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"resultdefl", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+         "sectorm13", "+", "sectorm23", "+", "sectorm12m2", "+", 
+          "sectorm1m22"}], ")"}], "//.", "reCE"}], "//.", "reCB"}], "//.", 
+      "reM"}], "//.", 
+     RowBox[{"{", 
+      RowBox[{"\[Mu]", "\[Rule]", 
+       RowBox[{"\[Nu]", "*", "M"}]}], "}"}]}], "//.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Log", "[", 
+       RowBox[{"\[Gamma]", "-", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          RowBox[{"\[Gamma]", "^", "2"}]}], "]"}]}], "]"}], "\[Rule]", 
+      RowBox[{
+       RowBox[{"-", "2"}], "*", 
+       RowBox[{"ArcSinh", "[", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"\[Gamma]", "-", "1"}], ")"}], "/", "2"}], "]"}], 
+        "]"}]}]}], "}"}]}], "//", "FullSimplify"}]}]], "Input",
+ CellChangeTimes->{{3.847788864844328*^9, 3.847788893906377*^9}, 
+   3.8477926943755302`*^9, {3.8479625769985123`*^9, 3.847962582790279*^9}, 
+   3.853834139499262*^9, {3.853834362465665*^9, 3.8538344156433783`*^9}, {
+   3.85383725689462*^9, 3.853837260900683*^9}, {3.85383730910065*^9, 
+   3.8538373102543783`*^9}, 3.853845381837304*^9, {3.854007481200243*^9, 
+   3.854007481773365*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"65f6652c-9250-4142-95ac-9e6349dfbe83"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{"35", " ", 
+    SuperscriptBox["mB", "6"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", 
+       SuperscriptBox["\[Gamma]", "2"]}], ")"}], 
+     RowBox[{"7", "/", "2"}]]}]], 
+  RowBox[{"16", " ", "\[ImaginaryI]", " ", 
+   SuperscriptBox["G", "7"], " ", 
+   SuperscriptBox["M", "8"], " ", "\[Nu]", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[Gamma]", "2"]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "4"}], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", 
+              SuperscriptBox["\[Gamma]", "2"]}], ")"}], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "-", 
+             RowBox[{"16", " ", 
+              SuperscriptBox["\[Gamma]", "2"]}], "+", 
+             RowBox[{"80", " ", 
+              SuperscriptBox["\[Gamma]", "4"]}]}], ")"}], " ", "\[Lambda]B"}],
+           "-", 
+          RowBox[{"2", " ", 
+           RowBox[{"(", 
+            RowBox[{"5", "-", 
+             RowBox[{"77", " ", 
+              SuperscriptBox["\[Gamma]", "2"]}], "+", 
+             RowBox[{"264", " ", 
+              SuperscriptBox["\[Gamma]", "4"]}], "-", 
+             RowBox[{"352", " ", 
+              SuperscriptBox["\[Gamma]", "6"]}], "+", 
+             RowBox[{"160", " ", 
+              SuperscriptBox["\[Gamma]", "8"]}]}], ")"}], " ", "\[Lambda]E"}],
+           "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "4"}], "+", 
+             RowBox[{"2", " ", "\[Gamma]", " ", 
+              RowBox[{"(", 
+               RowBox[{"14042", "+", 
+                RowBox[{"\[Gamma]", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "28"}], "+", 
+                   RowBox[{"\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"33131", "+", 
+                    RowBox[{"2", " ", "\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"111", "+", 
+                    RowBox[{"2", " ", "\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"686", "+", 
+                    RowBox[{"\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "88"}], "+", 
+                    RowBox[{"\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "91"}], "+", 
+                    RowBox[{"4", " ", "\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"10", "+", 
+                    RowBox[{"7", " ", "\[Gamma]"}]}], ")"}]}]}], ")"}]}]}], 
+                    ")"}]}]}], ")"}]}]}], ")"}]}]}], ")"}]}]}], ")"}]}]}], 
+               ")"}]}]}], ")"}], " ", "\[Kappa]B", " ", "\[Nu]"}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"10", "+", 
+             RowBox[{"\[Gamma]", " ", 
+              RowBox[{"(", 
+               RowBox[{"28329", "+", 
+                RowBox[{"2", " ", "\[Gamma]", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "77"}], "+", 
+                   RowBox[{"\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"32991", "+", 
+                    RowBox[{"2", " ", "\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"132", "+", 
+                    RowBox[{"\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"1407", "+", 
+                    RowBox[{"2", " ", "\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "88"}], "+", 
+                    RowBox[{"\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "91"}], "+", 
+                    RowBox[{"4", " ", "\[Gamma]", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"10", "+", 
+                    RowBox[{"7", " ", "\[Gamma]"}]}], ")"}]}]}], ")"}]}]}], 
+                    ")"}]}]}], ")"}]}]}], ")"}]}]}], ")"}]}]}], ")"}]}]}], 
+               ")"}]}]}], ")"}], " ", "\[Kappa]E", " ", "\[Nu]"}]}], ")"}]}], 
+       ")"}]}], "+", 
+     RowBox[{"210", " ", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"32", "+", 
+           RowBox[{"474", " ", 
+            SuperscriptBox["\[Gamma]", "2"]}], "+", 
+           RowBox[{"440", " ", 
+            SuperscriptBox["\[Gamma]", "4"]}]}], ")"}], " ", "\[Kappa]B"}], 
+        "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"33", "+", 
+           RowBox[{"474", " ", 
+            SuperscriptBox["\[Gamma]", "2"]}], "+", 
+           RowBox[{"440", " ", 
+            SuperscriptBox["\[Gamma]", "4"]}]}], ")"}], " ", "\[Kappa]E"}]}], 
+       ")"}], " ", "\[Nu]", " ", 
+      RowBox[{"ArcSinh", "[", 
+       FractionBox[
+        SqrtBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "\[Gamma]"}]], 
+        SqrtBox["2"]], "]"}]}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{
+  3.847791146442305*^9, 3.847863929157157*^9, 3.847962449197631*^9, {
+   3.847962588814892*^9, 3.84796260230584*^9}, 3.848123050001593*^9, 
+   3.8485712992220373`*^9, 3.848571698795807*^9, 3.850549484555562*^9, 
+   3.8508112426505938`*^9, 3.850896302022461*^9, 3.8508965570943127`*^9, 
+   3.850896973787587*^9, 3.8509072491941223`*^9, 3.850980088026305*^9, 
+   3.8509803660246696`*^9, 3.85106264151821*^9, 3.851069043812407*^9, 
+   3.8510693018148947`*^9, 3.851069583645069*^9, 3.8538341978248253`*^9, 
+   3.853834250215315*^9, {3.853834367979074*^9, 3.853834416195837*^9}, 
+   3.85383486307329*^9, 3.853836802197503*^9, 3.853837263025828*^9, 
+   3.853837314738703*^9, 3.854007499622538*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"879ea1de-c43e-43c6-9367-dc7f186cc2d9"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.853845376361475*^9, 3.853845376372694*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"bb800eb4-c0a1-4739-92f4-8ea0ad572d17"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SeriesCoefficient", "[", 
+     RowBox[{"resultdefl", ",", 
+      RowBox[{"{", 
+       RowBox[{"\[Lambda]E", ",", "0", ",", "1"}], "}"}]}], "]"}], "//.", 
+    RowBox[{"{", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"\[Nu]", "*", "M"}]}], "}"}]}], "//.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Log", "[", 
+      RowBox[{"\[Gamma]", "-", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         RowBox[{"\[Gamma]", "^", "2"}]}], "]"}]}], "]"}], "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "2"}], "*", 
+      RowBox[{"ArcSinh", "[", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"\[Gamma]", "-", "1"}], ")"}], "/", "2"}], "]"}], "]"}]}]}],
+     "}"}]}], "//", "Simplify"}]], "Input",
+ CellChangeTimes->{{3.848123020661448*^9, 3.8481230359371347`*^9}, 
+   3.853834149654456*^9, {3.853834459577531*^9, 3.8538344637824*^9}, {
+   3.853834535943594*^9, 3.853834557693769*^9}, {3.8538346503940887`*^9, 
+   3.8538347210807056`*^9}, {3.8538367720741873`*^9, 3.8538367917060223`*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"ff35e391-4b40-4e68-89f3-3e8dd77eff60"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"32", " ", "\[ImaginaryI]", " ", 
+   SuperscriptBox["G", "7"], " ", 
+   SuperscriptBox["M", "8"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "5"}], "+", 
+     RowBox[{"72", " ", 
+      SuperscriptBox["\[Gamma]", "2"]}], "-", 
+     RowBox[{"192", " ", 
+      SuperscriptBox["\[Gamma]", "4"]}], "+", 
+     RowBox[{"160", " ", 
+      SuperscriptBox["\[Gamma]", "6"]}]}], ")"}], " ", "\[Nu]"}], 
+  RowBox[{"35", " ", 
+   SuperscriptBox["mB", "6"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      SuperscriptBox["\[Gamma]", "2"]}], ")"}], 
+    RowBox[{"3", "/", "2"}]]}]]], "Output",
+ CellChangeTimes->{
+  3.8538344646571703`*^9, {3.853834547380641*^9, 3.853834558461726*^9}, {
+   3.8538346510584583`*^9, 3.8538346561791687`*^9}, {3.853834704050846*^9, 
+   3.853834721586874*^9}, 3.853834863561343*^9, {3.853836794610383*^9, 
+   3.853836802297606*^9}, 3.853837272474986*^9, 3.85383736164638*^9, 
+   3.854007499830139*^9},
+ CellLabel->"Out[34]=",ExpressionUUID->"7ea29c19-1ee7-42c1-9236-b0bdfbc9fbf6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"SeriesCoefficient", "[", 
+       RowBox[{"resultdefl", ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Lambda]B", ",", "0", ",", "1"}], "}"}]}], "]"}], "*", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\[Gamma]", "^", "2"}], "-", "1"}], ")"}], "^", 
+        RowBox[{"(", 
+         RowBox[{"3", "/", "2"}], ")"}]}], "/", "32"}], "*", "35"}], "//.", 
+     RowBox[{"{", 
+      RowBox[{"\[Mu]", "\[Rule]", 
+       RowBox[{"\[Nu]", "*", "M"}]}], "}"}]}], "//.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Log", "[", 
+       RowBox[{"\[Gamma]", "-", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          RowBox[{"\[Gamma]", "^", "2"}]}], "]"}]}], "]"}], "\[Rule]", 
+      RowBox[{
+       RowBox[{"-", "2"}], "*", 
+       RowBox[{"ArcSinh", "[", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"\[Gamma]", "-", "1"}], ")"}], "/", "2"}], "]"}], 
+        "]"}]}]}], "}"}]}], "//", "Simplify"}], "//", "Expand"}]], "Input",
+ CellChangeTimes->{{3.8538368140649357`*^9, 3.853836907471685*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"0ad32839-b0f1-46d5-a12c-bf18919b290d"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox["G", "7"], " ", 
+    SuperscriptBox["M", "8"], " ", "\[Nu]"}], 
+   SuperscriptBox["mB", "6"]], "+", 
+  FractionBox[
+   RowBox[{"30", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox["G", "7"], " ", 
+    SuperscriptBox["M", "8"], " ", 
+    SuperscriptBox["\[Gamma]", "2"], " ", "\[Nu]"}], 
+   SuperscriptBox["mB", "6"]], "-", 
+  FractionBox[
+   RowBox[{"192", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox["G", "7"], " ", 
+    SuperscriptBox["M", "8"], " ", 
+    SuperscriptBox["\[Gamma]", "4"], " ", "\[Nu]"}], 
+   SuperscriptBox["mB", "6"]], "+", 
+  FractionBox[
+   RowBox[{"160", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox["G", "7"], " ", 
+    SuperscriptBox["M", "8"], " ", 
+    SuperscriptBox["\[Gamma]", "6"], " ", "\[Nu]"}], 
+   SuperscriptBox["mB", "6"]]}]], "Output",
+ CellChangeTimes->{{3.853836814836985*^9, 3.8538369078743057`*^9}, 
+   3.854007499921311*^9},
+ CellLabel->"Out[35]=",ExpressionUUID->"35f97c8b-3c6b-4108-b302-93ee6ee0f516"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"sectorm12m2", "+", "sectorm1m22"}], ")"}], "//.", "reCE"}], "//.",
+       "reCB"}], "//.", "reM"}], "//.", 
+    RowBox[{"{", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"\[Nu]", "*", "M"}]}], "}"}]}], "//.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Log", "[", 
+      RowBox[{"\[Gamma]", "-", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         RowBox[{"\[Gamma]", "^", "2"}]}], "]"}]}], "]"}], "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", "2"}], "*", 
+      RowBox[{"ArcSinh", "[", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"\[Gamma]", "-", "1"}], ")"}], "/", "2"}], "]"}], "]"}]}]}],
+     "}"}]}], "//", "Simplify"}]], "Input",
+ CellChangeTimes->{{3.847863841425632*^9, 3.847863904747182*^9}, {
+   3.84786397235506*^9, 3.847863978037849*^9}, 3.853834158059565*^9, {
+   3.8538344945511093`*^9, 3.8538344984609528`*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"9d8d81c6-cc30-4dff-b034-58ce9aedb991"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"5", " ", 
+     SuperscriptBox["mB", "6"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        SuperscriptBox["\[Gamma]", "2"]}], ")"}], "3"]}]], 
+   RowBox[{"16", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox["G", "7"], " ", 
+    SuperscriptBox["M", "8"], " ", 
+    SuperscriptBox["\[Nu]", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[Gamma]", " ", 
+       SqrtBox[
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["\[Gamma]", "2"]}]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", " ", 
+          RowBox[{"(", 
+           RowBox[{"2006", "+", 
+            RowBox[{"4733", " ", 
+             SuperscriptBox["\[Gamma]", "2"]}], "+", 
+            RowBox[{"392", " ", 
+             SuperscriptBox["\[Gamma]", "4"]}], "-", 
+            RowBox[{"52", " ", 
+             SuperscriptBox["\[Gamma]", "6"]}], "+", 
+            RowBox[{"16", " ", 
+             SuperscriptBox["\[Gamma]", "8"]}]}], ")"}], " ", "\[Kappa]B"}], 
+         "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"4047", "+", 
+            RowBox[{"9426", " ", 
+             SuperscriptBox["\[Gamma]", "2"]}], "+", 
+            RowBox[{"804", " ", 
+             SuperscriptBox["\[Gamma]", "4"]}], "-", 
+            RowBox[{"104", " ", 
+             SuperscriptBox["\[Gamma]", "6"]}], "+", 
+            RowBox[{"32", " ", 
+             SuperscriptBox["\[Gamma]", "8"]}]}], ")"}], " ", "\[Kappa]E"}]}],
+         ")"}]}], "-", 
+      RowBox[{"30", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"32", "+", 
+            RowBox[{"474", " ", 
+             SuperscriptBox["\[Gamma]", "2"]}], "+", 
+            RowBox[{"440", " ", 
+             SuperscriptBox["\[Gamma]", "4"]}]}], ")"}], " ", "\[Kappa]B"}], 
+         "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"33", "+", 
+            RowBox[{"474", " ", 
+             SuperscriptBox["\[Gamma]", "2"]}], "+", 
+            RowBox[{"440", " ", 
+             SuperscriptBox["\[Gamma]", "4"]}]}], ")"}], " ", "\[Kappa]E"}]}],
+         ")"}], " ", 
+       RowBox[{"ArcSinh", "[", 
+        FractionBox[
+         SqrtBox[
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "\[Gamma]"}]], 
+         SqrtBox["2"]], "]"}]}]}], ")"}]}]}]}]], "Output",
+ CellChangeTimes->{3.853834499070944*^9, 3.853834863714415*^9, 
+  3.8538368024180593`*^9, 3.8540075000397673`*^9},
+ CellLabel->"Out[36]=",ExpressionUUID->"56807f3e-bb6d-4f35-9bf3-0b8a31705310"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.850896927762267*^9, 3.850896943884983*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"d942cd42-02b3-4d40-8a7d-5245ea347f8b"]
+},
+WindowSize->{1440., 749.25},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+Magnification:>0.8 Inherited,
+FrontEndVersion->"13.0 for Linux x86 (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"19c66932-ae48-423e-9022-23f1103ee2ee"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 172, 2, 23, "Input",ExpressionUUID->"49a41166-a298-4c58-9f92-a4e5847ad8ea"],
+Cell[CellGroupData[{
+Cell[755, 26, 19152, 451, 570, "Input",ExpressionUUID->"a2f294e8-91d9-40de-8d46-89f5db7f9c8f"],
+Cell[19910, 479, 1771, 43, 51, "Print",ExpressionUUID->"20fd2066-8d56-4b5b-a927-8eb3b49d1bdc"],
+Cell[21684, 524, 2302, 49, 60, "Output",ExpressionUUID->"8334d88d-cb35-4d6b-95c7-b7a5f8000732"],
+Cell[23989, 575, 17456, 389, 216, "Output",ExpressionUUID->"77346250-030a-482b-8fb1-1b345d089ac5"],
+Cell[41448, 966, 16440, 386, 233, "Output",ExpressionUUID->"71723f00-0cdd-4505-bd52-db6f7a30e746"],
+Cell[CellGroupData[{
+Cell[57913, 1356, 790, 13, 19, "Print",ExpressionUUID->"403cd1fa-f0a2-4f68-98e5-68885f199801"],
+Cell[58706, 1371, 790, 13, 18, "Print",ExpressionUUID->"53c181e9-8bc5-4998-b9fd-7213b2f76a12"],
+Cell[59499, 1386, 781, 12, 18, "Print",ExpressionUUID->"644d2f83-ac8d-4a0a-b681-fa80eeddc91f"],
+Cell[60283, 1400, 779, 12, 18, "Print",ExpressionUUID->"5a901721-c835-4d54-9bec-05efbfb75ed1"],
+Cell[61065, 1414, 781, 12, 18, "Print",ExpressionUUID->"8ce39d85-0956-4c75-ae15-fec2c2fbd94b"],
+Cell[61849, 1428, 764, 12, 18, "Print",ExpressionUUID->"72f8681b-37c8-4d7d-baac-8e1d9409f8b5"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62662, 1446, 438, 9, 23, "Input",ExpressionUUID->"7e524d7d-b2b3-47ec-8806-dd0c77060105"],
+Cell[63103, 1457, 1696, 30, 26, "Output",ExpressionUUID->"e858221f-8856-4eb5-ab52-5387c3ef26b5"]
+}, Open  ]],
+Cell[64814, 1490, 1296, 34, 87, "Input",ExpressionUUID->"0270e3f9-ccfe-400e-b7fb-6b12ff3759d4"],
+Cell[CellGroupData[{
+Cell[66135, 1528, 3679, 107, 71, "Input",ExpressionUUID->"a4705cdf-ac0d-4ec2-8aff-2a26eda83211"],
+Cell[69817, 1637, 2645, 62, 46, "Output",ExpressionUUID->"2b66b485-fa92-4cdb-bf5e-915a4f0d5736"],
+Cell[72465, 1701, 2367, 54, 43, "Output",ExpressionUUID->"1cf1a0c2-11a2-4b93-951f-48f0beceb141"],
+Cell[74835, 1757, 1864, 42, 40, "Output",ExpressionUUID->"f979d65a-0986-4641-a446-49c3e55ef72c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76736, 1804, 779, 24, 57, "Input",ExpressionUUID->"adc8cf7c-d23e-4c0d-aace-ad952863c692"],
+Cell[77518, 1830, 1290, 23, 27, "Output",ExpressionUUID->"3302fbdb-3214-4d28-8366-b677cbba3a77"],
+Cell[78811, 1855, 1437, 29, 49, "Output",ExpressionUUID->"253ad2fb-b9c9-436f-b7cf-ed664342572a"],
+Cell[80251, 1886, 1474, 30, 49, "Output",ExpressionUUID->"f62cb874-0f70-446d-a00e-4e7211fc6395"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81762, 1921, 195, 3, 23, "Input",ExpressionUUID->"5df20cd7-9dea-4592-b5fa-660b696ad32f"],
+Cell[81960, 1926, 945, 13, 26, "Output",ExpressionUUID->"9bd4ea9e-aed3-47e2-893d-b5ea1b9a2f2d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82942, 1944, 1438, 38, 25, "Input",ExpressionUUID->"65f6652c-9250-4142-95ac-9e6349dfbe83"],
+Cell[84383, 1984, 6258, 160, 87, "Output",ExpressionUUID->"879ea1de-c43e-43c6-9367-dc7f186cc2d9"]
+}, Open  ]],
+Cell[90656, 2147, 171, 2, 23, "Input",ExpressionUUID->"bb800eb4-c0a1-4739-92f4-8ea0ad572d17"],
+Cell[CellGroupData[{
+Cell[90852, 2153, 1199, 31, 25, "Input",ExpressionUUID->"ff35e391-4b40-4e68-89f3-3e8dd77eff60"],
+Cell[92054, 2186, 1091, 28, 48, "Output",ExpressionUUID->"7ea29c19-1ee7-42c1-9236-b0bdfbc9fbf6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93182, 2219, 1285, 37, 25, "Input",ExpressionUUID->"0ad32839-b0f1-46d5-a12c-bf18919b290d"],
+Cell[94470, 2258, 1053, 27, 42, "Output",ExpressionUUID->"35f97c8b-3c6b-4108-b302-93ee6ee0f516"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[95560, 2290, 1119, 32, 25, "Input",ExpressionUUID->"9d8d81c6-cc30-4dff-b034-58ce9aedb991"],
+Cell[96682, 2324, 2632, 75, 48, "Output",ExpressionUUID->"56807f3e-bb6d-4f35-9bf3-0b8a31705310"]
+}, Open  ]],
+Cell[99329, 2402, 171, 2, 23, "Input",ExpressionUUID->"d942cd42-02b3-4d40-8a7d-5245ea347f8b"]
+}
+]
+*)
+

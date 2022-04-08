@@ -1,0 +1,264 @@
+BasisDirectory[v36LRpp] = StringDrop[DirectoryName[$Input], -1]
+v36LRpp /: BasisSectors[v36LRpp] := Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/BasisSectors[v36LRpp]"]]
+v36LRpp /: CutDs[v36LRpp] := {0, 0, 0, 0, 0, 0, 0, 1, 1}
+v36LRpp /: Definitions[v36LRpp] := {Hold[MetricTensor[] === d, SetDim[d]], 
+   Hold[VecQ[k2], Declare[k2, Vector]], Hold[VecQ[k3], Declare[k3, Vector]], 
+   Hold[VecQ[q], Declare[q, Vector]], Hold[VecQ[v1], Declare[v1, Vector]], 
+   Hold[VecQ[v2], Declare[v2, Vector]], Hold[TypeOf[mQ] === Untyped, 
+    Declare[mQ, Untyped]], Hold[TypeOf[q] === Vector, Declare[q, Vector]], 
+   Hold[TypeOf[v1] === Vector, Declare[v1, Vector]], 
+   Hold[TypeOf[v2] === Vector, Declare[v2, Vector]], 
+   Hold[TypeOf[\[Gamma]] === Untyped, Declare[\[Gamma], Untyped]], 
+   Hold[sp[q, q] === -mQ^2, sp[q, q] = -mQ^2], Hold[sp[v1, v1] === 1, 
+    sp[v1, v1] = 1], Hold[sp[v2, v2] === 1, sp[v2, v2] = 1], 
+   Hold[sp[q, v1] === 0, sp[q, v1] = 0], Hold[sp[q, v2] === 0, 
+    sp[q, v2] = 0], Hold[sp[v1, v2] === \[Gamma], sp[v1, v2] = \[Gamma]]}
+v36LRpp /: Ds[v36LRpp] := {sp[k2, k2], sp[k3, k3], sp[k2 - q, k2 - q], 
+   sp[k3 - q, k3 - q], sp[-k2 - k3 + q, -k2 - k3 + q], sp[k2, v2], 
+   sp[k3, v1], -sp[k2, v1], -sp[k3, v2]}
+v36LRpp /: EMs[v36LRpp] := {q, v1, v2}
+v36LRpp /: IBP[v36LRpp] := Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/IBP[v36LRpp]"]]
+v36LRpp /: Information[v36LRpp] := 
+  (If[ValueQ[v36LRpp::usage], Information[v36LRpp, LongForm -> False]]; 
+   Print[Grid[Partition[Union[Replace[Replace[First /@ UpValues[v36LRpp] /. 
+          HoldPattern -> HoldForm, 
+         {HoldPattern[HoldForm[(LiteRed`Private`f$_)[v36LRpp, __]]] :> 
+           HoldForm[LiteRed`Private`f$[v36LRpp, "\[Ellipsis]"]]}, {1}], 
+        {HoldPattern[LiteRed`Private`x$:HoldForm[(LiteRed`Private`f$_)[
+              v36LRpp, ___]]] :> Button[LiteRed`Private`x$, 
+           (SelectionMove[ButtonNotebook[], All, GeneratedCell]; 
+             NotebookDelete[]; Information[Evaluate[LiteRed`Private`x$[[1,
+                0]]], LongForm -> False]; Print[TableForm[Cases[UpValues[
+                  v36LRpp], HoldPattern[LiteRed`Private`a$_ :> 
+                    LiteRed`Private`b$_] /; MatchQ[LiteRed`Private`a$[[1,0]], 
+                   LiteRed`Private`x$[[1,0]]]] /. HoldPattern -> 
+                 HoldForm]]) & , Appearance -> "Frameless", 
+           BaseStyle -> "InformationLink"]}, {1}]], 5], 
+     DefaultBaseStyle -> "InfoGrid"]])
+v36LRpp /: jRules[v36LRpp, 0, 0, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 0, 1, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 0, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 0, 1, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 0, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 0, 1, 1, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 0, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 0, 1, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 1, 0, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 1, 0, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 1, 0, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 1, 0, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 1, 0, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 1, 0, 1, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 1, 0, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 1, 0, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 1, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 1, 1, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 1, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 1, 1, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 1, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 1, 1, 1, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 0, 1, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 0, 1, 1, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 0, 1, 0, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 0, 1, 0, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 0, 1, 0, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 0, 1, 0, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 0, 1, 0, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 0, 1, 0, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 0, 1, 0, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 0, 1, 0, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 0, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 0, 1, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 0, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 0, 1, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 0, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 0, 1, 1, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 0, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 0, 1, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 0, 0, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 0, 0, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 0, 0, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 0, 0, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 0, 0, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 0, 0, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 0, 0, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 0, 0, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 0, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 0, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 0, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 0, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 0, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 0, 1, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 0, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 0, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 0, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 0, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 0, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 0, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 0, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 0, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 0, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 0, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 1, 0, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 1, 0, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 1, 0, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 1, 0, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 1, 0, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 1, 0, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 1, 0, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 1, 0, 1, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 1, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jRules[v36LRpp, 1, 1, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jRules[v36LRpp, 1, 1, 1, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 0, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 0, 1, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 0, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 0, 1, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 0, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 0, 1, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 1, 0, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 1, 0, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 1, 0, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 1, 0, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 1, 0, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 1, 0, 1, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 1, 0, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 1, 0, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 1, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 1, 1, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 1, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 1, 1, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 1, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 1, 1, 1, 1, 1, 0, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 0, 1, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 0, 1, 1, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 1, 1, 1, 1, 0, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 1, 1, 1, 1, 0, 0, 0, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 1, 1, 1, 1, 0, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 1, 1, 1, 1, 0, 0, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 1, 1, 1, 1, 0, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 1, 1, 1, 1, 0, 1, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 1, 1, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 1, 1, 1, 1, 1, 0, 0, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 1, 1, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 1, 1, 1, 1, 1, 0, 1, 1, 1]"]]
+v36LRpp /: jSymmetries[v36LRpp, 1, 1, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/jSymmetries[v36LRpp, 1, 1, 1, 1, 1, 1, 1, 1, 1]"]]
+v36LRpp /: LI[v36LRpp] := Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/LI[v36LRpp]"]]
+v36LRpp /: LMs[v36LRpp] := {k2, k3}
+v36LRpp /: MappedSectors[v36LRpp] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], "/MappedSectors[v36LRpp]"]]
+v36LRpp /: MIs[v36LRpp] := {j[v36LRpp, 0, 0, 1, 1, 1, 0, 0, 1, 1], 
+   j[v36LRpp, 0, 1, 0, 1, 1, 0, 0, 1, 1], j[v36LRpp, 0, 0, 2, 1, 1, 0, 0, 1, 
+    1], j[v36LRpp, 0, 0, 1, 1, 2, 0, 0, 1, 1], j[v36LRpp, 0, 0, 1, 1, 1, 0, 
+    1, 1, 1], j[v36LRpp, 0, 1, 0, 1, 1, 1, 0, 1, 1], 
+   j[v36LRpp, 1, 1, 1, 1, 0, 0, 0, 1, 1], j[v36LRpp, 0, 0, 1, 1, 1, 1, 1, 1, 
+    1], j[v36LRpp, 1, 1, 1, 1, 0, 0, 1, 1, 1], j[v36LRpp, 1, 1, 1, 1, 1, 0, 
+    0, 1, 1], j[v36LRpp, 1, 1, 1, 1, 2, 0, 0, 1, 1], 
+   j[v36LRpp, 1, 1, 1, 1, 1, 0, 0, 2, 1], j[v36LRpp, 1, 1, 1, 1, 0, 1, 1, 1, 
+    1], j[v36LRpp, 1, 0, 1, 0, 1, 1, 0, 1, 1], j[v36LRpp, 1, 1, 1, 1, 1, 1, 
+    1, 1, 1], j[v36LRpp, 1, 1, 0, 0, 2, 1, 0, 1, 1]}
+v36LRpp /: NonZeroSectors[v36LRpp] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], "/NonZeroSectors[v36LRpp]"]]
+v36LRpp /: SimpleSectors[v36LRpp] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], "/SimpleSectors[v36LRpp]"]]
+v36LRpp /: SPs[v36LRpp] := {sp[k2, k2], sp[k2, k3], sp[k2, q], sp[k2, v1], 
+   sp[k2, v2], sp[k3, k3], sp[k3, q], sp[k3, v1], sp[k3, v2]}
+v36LRpp /: SR[v36LRpp] := Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/SR[v36LRpp]"]]
+v36LRpp /: Toj[v36LRpp] := {sp[k2, k2] -> j[v36LRpp, -1, 0, 0, 0, 0, 0, 0, 0, 
+     0], sp[k2, k3] -> (-mQ^2 - j[v36LRpp, 0, 0, -1, 0, 0, 0, 0, 0, 0] - 
+      j[v36LRpp, 0, 0, 0, -1, 0, 0, 0, 0, 0] + j[v36LRpp, 0, 0, 0, 0, -1, 0, 
+       0, 0, 0])/2, sp[k2, q] -> 
+    (-mQ^2 + j[v36LRpp, -1, 0, 0, 0, 0, 0, 0, 0, 0] - 
+      j[v36LRpp, 0, 0, -1, 0, 0, 0, 0, 0, 0])/2, 
+   sp[k2, v1] -> -j[v36LRpp, 0, 0, 0, 0, 0, 0, 0, -1, 0], 
+   sp[k2, v2] -> j[v36LRpp, 0, 0, 0, 0, 0, -1, 0, 0, 0], 
+   sp[k3, k3] -> j[v36LRpp, 0, -1, 0, 0, 0, 0, 0, 0, 0], 
+   sp[k3, q] -> (-mQ^2 + j[v36LRpp, 0, -1, 0, 0, 0, 0, 0, 0, 0] - 
+      j[v36LRpp, 0, 0, 0, -1, 0, 0, 0, 0, 0])/2, 
+   sp[k3, v1] -> j[v36LRpp, 0, 0, 0, 0, 0, 0, -1, 0, 0], 
+   sp[k3, v2] -> -j[v36LRpp, 0, 0, 0, 0, 0, 0, 0, 0, -1]}
+v36LRpp /: UniqueSectors[v36LRpp] := 
+  Get[StringJoin[BasisDirectory[v36LRpp], "/UniqueSectors[v36LRpp]"]]
+v36LRpp /: ZerojRule[v36LRpp] := LiteRed`Private`jjj:j[v36LRpp, __] :> 
+   0 /; Module[{LiteRed`Private`jjs = 
+       Rest[List @@ jSector[LiteRed`Private`jjj]]}, 
+     Or @@ (BitOr[LiteRed`Private`jjs, #1] === #1 & ) /@ 
+       {{1, 1, 1, 1, 1, 1, 1, 1, 0}, {1, 1, 1, 1, 1, 1, 1, 0, 1}, 
+        {0, 1, 1, 0, 1, 1, 1, 1, 1}, {0, 1, 1, 1, 0, 1, 1, 1, 1}, 
+        {1, 1, 1, 0, 0, 1, 1, 1, 1}, {1, 1, 0, 1, 0, 1, 1, 1, 1}, 
+        {1, 0, 1, 1, 0, 1, 1, 1, 1}, {1, 0, 0, 1, 1, 1, 1, 1, 1}}]
+v36LRpp /: ZeroSectors[v36LRpp] := Get[StringJoin[BasisDirectory[v36LRpp], 
+    "/ZeroSectors[v36LRpp]"]]
+v36LRpp::usage = "2-loop basis with 3 external momenta.\nUse \
+Information[v36LRpp] to get basis summary.\nThis string can be redefined by \
+setting v36LRpp::usage=\"\[Ellipsis]\""; Information[v36LRpp, 
+  LongForm -> False]; 
+LiteRed`Private`CheckDefs[v36LRpp]
+BasisDirectory[v36LRpp]

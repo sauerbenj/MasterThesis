@@ -1,0 +1,78 @@
+BasisDirectory[v1] = StringDrop[DirectoryName[$Input], -1]
+v1 /: BasisSectors[v1] := {js[v1, 0, 1, 1], js[v1, 1, 1, 1]}
+v1 /: CutDs[v1] := {0, 0, 1}
+v1 /: Definitions[v1] := {Hold[MetricTensor[] === d, SetDim[d]], 
+   Hold[VecQ[k], Declare[k, Vector]], Hold[VecQ[q], Declare[q, Vector]], 
+   Hold[VecQ[v], Declare[v, Vector]]}
+v1 /: Ds[v1] := {sp[k, k], sp[k - q, k - q], sp[k, v]}
+v1 /: EMs[v1] := {q, v}
+v1 /: IBP[v1] := {-(#2*j[v1, -1 + #1, 1 + #2, #3]) + 
+     (d - 2*#1 - #2 - #3)*j[v1, #1, #2, #3] + #2*j[v1, #1, 1 + #2, #3]*
+      sp[q, q], -(#2*j[v1, -1 + #1, 1 + #2, #3]) + 
+     (-#1 + #2)*j[v1, #1, #2, #3] + #1*j[v1, 1 + #1, -1 + #2, #3] + 
+     #2*j[v1, #1, 1 + #2, #3]*sp[q, q] - #1*j[v1, 1 + #1, #2, #3]*sp[q, q] - 
+     #3*j[v1, #1, #2, 1 + #3]*sp[q, v], -2*#2*j[v1, #1, 1 + #2, -1 + #3] - 
+     2*#1*j[v1, 1 + #1, #2, -1 + #3] + 2*#2*j[v1, #1, 1 + #2, #3]*sp[q, v] - 
+     #3*j[v1, #1, #2, 1 + #3]*sp[v, v]} & 
+v1 /: Information[v1] := (If[ValueQ[v1::usage], 
+    Information[v1, LongForm -> False]]; 
+   Print[Grid[Partition[Union[Replace[Replace[First /@ UpValues[v1] /. 
+          HoldPattern -> HoldForm, 
+         {HoldPattern[HoldForm[(LiteRed`Private`f$_)[v1, __]]] :> 
+           HoldForm[LiteRed`Private`f$[v1, "\[Ellipsis]"]]}, {1}], 
+        {HoldPattern[LiteRed`Private`x$:HoldForm[(LiteRed`Private`f$_)[v1, 
+              ___]]] :> Button[LiteRed`Private`x$, 
+           (SelectionMove[ButtonNotebook[], All, GeneratedCell]; 
+             NotebookDelete[]; Information[Evaluate[LiteRed`Private`x$[[1,
+                0]]], LongForm -> False]; Print[TableForm[Cases[UpValues[v1], 
+                 HoldPattern[LiteRed`Private`a$_ :> LiteRed`Private`b$_] /; 
+                  MatchQ[LiteRed`Private`a$[[1,0]], LiteRed`Private`x$[[1,
+                    0]]]] /. HoldPattern -> HoldForm]]) & , 
+           Appearance -> "Frameless", BaseStyle -> "InformationLink"]}, 
+        {1}]], 5], DefaultBaseStyle -> "InfoGrid"]])
+v1 /: jRules[v1, 0, 1, 1] := Get[StringJoin[BasisDirectory[v1], 
+    "/jRules[v1, 0, 1, 1]"]]
+v1 /: jRules[v1, 1, 1, 1] := Get[StringJoin[BasisDirectory[v1], 
+    "/jRules[v1, 1, 1, 1]"]]
+v1 /: jSymmetries[v1, 0, 1, 1] := 
+  {{j[v1, (n1_)?NonPositive, (n2_)?Positive, (n3_)?Positive] /; True :> 
+     Expand[j[v1, n1, n2, n3]]}}
+v1 /: jSymmetries[v1, 1, 1, 1] := 
+  {{j[v1, (n1_)?Positive, (n2_)?Positive, (n3_)?Positive] /; True :> 
+     Expand[j[v1, n1, n2, n3]]}}
+v1 /: LI[v1] := {2*#2*j[v1, #1, 1 + #2, -1 + #3]*sp[q, q] - 
+     #2*j[v1, -1 + #1, 1 + #2, #3]*sp[q, v] + (#2 - #3)*j[v1, #1, #2, #3]*
+      sp[q, v] - #2*j[v1, #1, 1 + #2, #3]*sp[q, q]*sp[q, v] + 
+     (#3*j[v1, -1 + #1, #2, 1 + #3]*sp[v, v])/2 - 
+     (#3*j[v1, #1, -1 + #2, 1 + #3]*sp[v, v])/2 + 
+     (#3*j[v1, #1, #2, 1 + #3]*sp[q, q]*sp[v, v])/2} & 
+v1 /: LMs[v1] := {k}
+v1 /: MappedSectors[v1] := {}
+v1 /: MIs[v1] := {j[v1, 0, 1, 1], j[v1, 1, 1, 1]}
+v1 /: NonZeroSectors[v1] := {js[v1, 0, 1, 1], js[v1, 1, 1, 1]}
+v1 /: SimpleSectors[v1] := {js[v1, 0, 1, 1]}
+v1 /: SPs[v1] := {sp[k, k], sp[k, q], sp[k, v]}
+v1 /: SR[v1] := Module[{LiteRed`Private`jsc$ = jSector[j[v1, ##1]]}, 
+    If[MemberQ[UniqueSectors[v1], LiteRed`Private`jsc$], 
+     DeleteCases[DeleteDuplicates[Collectj[j[v1, ##1] - 
+         (j[v1, ##1] /. jSymmetries @@ LiteRed`Private`jsc$)]], 0], {}]] & 
+v1 /: tensorDim[v1] := 4
+v1 /: tensorQ[v1] := True
+v1 /: tensorRank[v1] := 1
+v1 /: Toj[v1] := {sp[k, k] -> j[v1, -1, 0, 0], 
+   sp[k, q] -> (j[v1, -1, 0, 0] - j[v1, 0, -1, 0] + sp[q, q])/2, 
+   sp[k, v] -> j[v1, 0, 0, -1]}
+v1 /: UniqueSectors[v1] := {js[v1, 0, 1, 1], js[v1, 1, 1, 1]}
+v1 /: vectorQ[v1] := True
+v1 /: ZerojRule[v1] := LiteRed`Private`jjj:j[v1, __] :> 
+   0 /; Module[{LiteRed`Private`jjs = 
+       Rest[List @@ jSector[LiteRed`Private`jjj]]}, 
+     Or @@ (BitOr[LiteRed`Private`jjs, #1] === #1 & ) /@ 
+       {{1, 1, 0}, {1, 0, 1}}]
+v1 /: ZeroSectors[v1] := {js[v1, 0, 0, 0], js[v1, 0, 0, 1], js[v1, 0, 1, 0], 
+   js[v1, 1, 0, 0], js[v1, 1, 0, 1], js[v1, 1, 1, 0]}
+v1::usage = "1-loop basis with 2 external momenta.\nUse Information[v1] to \
+get basis summary.\nThis string can be redefined by setting \
+v1::usage=\"\[Ellipsis]\""; Information[v1, LongForm -> False]; 
+LiteRed`Private`CheckDefs[v1]
+BasisDirectory[v1]

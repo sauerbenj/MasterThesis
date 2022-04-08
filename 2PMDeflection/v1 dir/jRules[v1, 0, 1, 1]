@@ -1,0 +1,43 @@
+{j[v1, (n1_)?NonPositive, (n2_)?Positive, (n3_)?Positive] /; 
+    !(n1 == 0 || n3 == 1) -> j[v1, 1 + n1, -1 + n2, n3] + 
+   ((1 + n1)*j[v1, 2 + n1, -1 + n2, -1 + n3]*sp[q, q])/((-1 + n3)*sp[q, v]) - 
+   ((1 + n1)*j[v1, 2 + n1, n2, -1 + n3]*sp[q, q]^2)/((-1 + n3)*sp[q, v]) + 
+   (4*(1 + n1)*j[v1, 2 + n1, n2, -2 + n3]*sp[q, q])/((-1 + n3)*sp[v, v]) + 
+   (j[v1, 1 + n1, n2, -1 + n3]*(-4*sp[q, v]^2 + 2*d*sp[q, v]^2 - 
+      4*n1*sp[q, v]^2 - 4*n2*sp[q, v]^2 - d*sp[q, q]*sp[v, v] + 
+      n1*sp[q, q]*sp[v, v] + 2*n2*sp[q, q]*sp[v, v] + n3*sp[q, q]*sp[v, v]))/
+    ((-1 + n3)*sp[q, v]*sp[v, v]), 
+ j[v1, (n1_)?NonPositive, (n2_)?Positive, (n3_)?Positive] /; 
+    !(n1 == 0 || n2 == 1) -> (j[v1, 1 + n1, n2, -1 + n3]*sp[q, q])/sp[q, v] + 
+   ((1 + n1)*j[v1, 2 + n1, -1 + n2, -1 + n3]*sp[q, q])/((-1 + n2)*sp[q, v]) + 
+   ((1 + n1)*j[v1, 2 + n1, -2 + n2, n3]*sp[q, q]*sp[v, v])/
+    (2*(-1 + n2)*sp[q, v]^2) - ((1 + n1)*j[v1, 2 + n1, -1 + n2, n3]*
+     sp[q, q]^2*sp[v, v])/(2*(-1 + n2)*sp[q, v]^2) + 
+   (j[v1, 1 + n1, -1 + n2, n3]*(-2*sp[q, v]^2 + 2*d*sp[q, v]^2 - 
+      4*n1*sp[q, v]^2 - 2*n2*sp[q, v]^2 - 2*n3*sp[q, v]^2 - 
+      sp[q, q]*sp[v, v] - d*sp[q, q]*sp[v, v] + n1*sp[q, q]*sp[v, v] + 
+      2*n2*sp[q, q]*sp[v, v] + n3*sp[q, q]*sp[v, v]))/
+    (2*(-1 + n2)*sp[q, v]^2), 
+ j[v1, (n1_)?NonPositive, (n2_)?Positive, (n3_)?Positive] /; n3 != 1 -> 
+  ((-1 - d + n1 + 2*n2 + n3)*j[v1, n1, n2, -1 + n3])/((-1 + n3)*sp[q, v]) + 
+   (n1*j[v1, 1 + n1, -1 + n2, -1 + n3])/((-1 + n3)*sp[q, v]) - 
+   (n1*j[v1, 1 + n1, n2, -1 + n3]*sp[q, q])/((-1 + n3)*sp[q, v]), 
+ j[v1, (n1_)?NonPositive, (n2_)?Positive, (n3_)?Positive] /; n2 != 1 -> 
+  j[v1, n1, n2, -1 + n3]/sp[q, v] + (n1*j[v1, 1 + n1, -1 + n2, -1 + n3])/
+    ((-1 + n2)*sp[q, v]) + ((-2 - d + n1 + 2*n2 + n3)*j[v1, n1, -1 + n2, n3]*
+     sp[v, v])/(2*(-1 + n2)*sp[q, v]^2) + 
+   (n1*j[v1, 1 + n1, -2 + n2, n3]*sp[v, v])/(2*(-1 + n2)*sp[q, v]^2) - 
+   (n1*j[v1, 1 + n1, -1 + n2, n3]*sp[q, q]*sp[v, v])/
+    (2*(-1 + n2)*sp[q, v]^2), 
+ j[v1, (n1_)?NonPositive, (n2_)?Positive, (n3_)?Positive] /; 
+   n2 == 1 && n3 == 1 && n1 != 0 -> (n1*j[v1, 1 + n1, 0, 1])/(-3 + d - n1) - 
+   ((1 + n1)*j[v1, 2 + n1, 0, 1]*sp[q, q])/(-3 + d - n1) + 
+   ((1 + n1)*j[v1, 2 + n1, 1, 1]*sp[q, q]^2)/(-3 + d - n1) + 
+   (2*j[v1, n1, 2, 0]*sp[q, v])/((-3 + d - n1)*sp[v, v]) + 
+   (2*n1*j[v1, 1 + n1, 1, 0]*sp[q, v])/((-3 + d - n1)*sp[v, v]) - 
+   (2*j[v1, 1 + n1, 2, 0]*sp[q, q]*sp[q, v])/((-3 + d - n1)*sp[v, v]) - 
+   (2*(1 + n1)*j[v1, 2 + n1, 1, 0]*sp[q, q]*sp[q, v])/
+    ((-3 + d - n1)*sp[v, v]) + 
+   (j[v1, 1 + n1, 1, 1]*(8*sp[q, v]^2 - 2*d*sp[q, v]^2 + 4*n1*sp[q, v]^2 - 
+      4*sp[q, q]*sp[v, v] + d*sp[q, q]*sp[v, v] - 2*n1*sp[q, q]*sp[v, v]))/
+    ((-3 + d - n1)*sp[v, v])}

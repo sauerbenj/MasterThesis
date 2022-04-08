@@ -1,0 +1,9 @@
+(* Created with the Wolfram Language for Students - Personal Use Only : www.wolfram.com *)
+{E^(I*(dot[b[wrld], k[1]]*signK[[1]] + dot[b[wrld], k[2]]*signK[[2]])), 
+ delta[dot[k[1], v[wrld]]*signK[[1]] + dot[k[2], v[wrld]]*signK[[2]]], 
+ -(\[Kappa]^2*cB[wrld]*signK[[1]]^2*signK[[2]]^2*
+    (dot[k[1], k[2]]*eta[i[h12], i[h22]] - k[1][i[h22]]*k[2][i[h12]])*
+    (v[wrld][i[h11]]*(-(dot[k[2], v[wrld]]*k[1][i[h21]]) + 
+       dot[k[1], k[2]]*v[wrld][i[h21]]) + dot[k[1], v[wrld]]*
+      (dot[k[2], v[wrld]]*eta[i[h11], i[h21]] - k[2][i[h11]]*
+        v[wrld][i[h21]]))*v[wrld][i[i3]]*v[wrld][i[k3]])/4, 1}

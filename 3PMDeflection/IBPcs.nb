@@ -1,0 +1,2727 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    114103,       2719]
+NotebookOptionsPosition[    111292,       2670]
+NotebookOutlinePosition[    111760,       2688]
+CellTagsIndexPosition[    111717,       2685]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"<<", "LiteRed`"}], ";"}]], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"36fe19ec-1e69-443b-b388-07b2a3c1b6a6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"**************** \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"LiteRed v1.83\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FrontFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    BackFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    GraphicsColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]], 
+   "\[InvisibleSpace]", "\<\" ********************\\nAuthor: Roman N. Lee, \
+Budker Institute of Nuclear Physics, Novosibirsk.\\nRelease Date: \
+11.01.2020\\nLiteRed stands for Loop InTEgrals REDuction.\\nThe package is \
+designed for the search and application of the Integration-By-Part reduction \
+rules. It also contains some other useful tools.\\nInput file timestamp: Mon \
+11 Jan 2021 17:19:14\\nSee ?LiteRed`* for a list of functions. \"\>"}],
+  SequenceForm["**************** ", 
+   Style["LiteRed v1.83", {Bold, 
+     RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]}], 
+   " ********************\nAuthor: Roman N. Lee, Budker Institute of Nuclear \
+Physics, Novosibirsk.\nRelease Date: 11.01.2020\nLiteRed stands for Loop \
+InTEgrals REDuction.\nThe package is designed for the search and application \
+of the Integration-By-Part reduction rules. It also contains some other \
+useful tools.\nInput file timestamp: Mon 11 Jan 2021 17:19:14\nSee ?LiteRed`* \
+for a list of functions. "],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.84813271724002*^9, 3.848132732902546*^9}, 
+   3.8481337073142633`*^9, 3.848395120274335*^9, 3.858228587553001*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"149461f5-75fb-4188-b6ef-4038b2724cca"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "LiteRed`*"}]], "Input",
+ CellChangeTimes->{{3.8346584587142*^9, 3.8346584674001427`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"6db95b00-8020-4bd7-945e-d9b05788e10b"],
+
+Cell[BoxData[
+ StyleBox[
+  FrameBox[GridBox[{
+     {
+      DynamicModuleBox[{Typeset`open$$ = True}, 
+       PaneSelectorBox[{False->
+        ButtonBox[
+         RowBox[{
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "RightPointerOpener"]], " ", 
+          StyleBox["LiteRed`", "InformationGridGroupHeader"]}],
+         Appearance->None,
+         BaseStyle->"InformationGridLink",
+         ButtonFunction:>FEPrivate`Set[Typeset`open$$, True],
+         Evaluator->Automatic,
+         Method->"Preemptive"], True->
+        PaneBox[GridBox[{
+           {
+            ButtonBox[
+             RowBox[{
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{8., {2., 6.}}], " ", 
+              StyleBox["LiteRed`", "InformationGridGroupHeader"]}],
+             Appearance->None,
+             BaseStyle->"InformationGridLink",
+             ButtonFunction:>FEPrivate`Set[Typeset`open$$, False],
+             Evaluator->Automatic,
+             Method->"Preemptive"]},
+           {
+            PaneBox[GridBox[{
+               {
+                ButtonBox[
+                 StyleBox["A", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "A", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["CheckDefinitions", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "CheckDefinitions", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Ds", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Ds", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["FindExtSymmetries", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "FindExtSymmetries", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Highjs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Highjs", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jRules", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jRules", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["LoweringDRR", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "LoweringDRR", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["RaisingDRR", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "RaisingDRR", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ToDShifts", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ToDShifts", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$NamingFunction", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "$NamingFunction", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic]},
+               {
+                ButtonBox[
+                 StyleBox["ABIBP", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ABIBP", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["CheckZeroAlways", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "CheckZeroAlways", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["EMs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "EMs", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["FindSymmetries", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "FindSymmetries", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["IBP", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "IBP", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["js", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "js", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["MappedSectors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "MappedSectors", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SimpleSectors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "SimpleSectors", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Toj", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Toj", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["ABIBPLI", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ABIBPLI", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["CheckZeroFunction", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "CheckZeroFunction", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ExecuteDefinitions", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ExecuteDefinitions", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["FromAB", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "FromAB", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["IBPLI", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "IBPLI", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jSector", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jSector", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["MIs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "MIs", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SimplifyAlways", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "SimplifyAlways", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ToMIsRule", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ToMIsRule", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["ABLI", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ABLI", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Collectj", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Collectj", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ExtMappedSectors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ExtMappedSectors", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["FromDShifts", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "FromDShifts", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["IBPReduce", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "IBPReduce", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jsOrder", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jsOrder", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NamingFunction", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "NamingFunction", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SimplifyFunction", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "SimplifyFunction", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["UniqueSectors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "UniqueSectors", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["AnalyzeSectors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "AnalyzeSectors", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["CollectjList", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "CollectjList", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ExtUniqueSectors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ExtUniqueSectors", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Fromj", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Fromj", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["IdentifyMIs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "IdentifyMIs", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jsOrderingFunction", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jsOrderingFunction", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NewBasis", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "NewBasis", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Solvej", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Solvej", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ZerojRule", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ZerojRule", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["AttachGraph", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "AttachGraph", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["CutDs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "CutDs", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Factor1", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Factor1", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["GenerateIBP", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "GenerateIBP", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["j", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "j", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jSymMatrices", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jSymMatrices", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NMIs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "NMIs", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SolvejSector", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "SolvejSector", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ZeroSectors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ZeroSectors", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["A$", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "A$", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Definitions", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Definitions", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Factor2", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Factor2", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["GramP", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "GramP", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jComplexity", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jComplexity", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jSymmetries", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jSymmetries", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["NonZeroSectors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "NonZeroSectors", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SPs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "SPs", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$LiteRedLog", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "$LiteRedLog", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["B", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "B", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Dinv", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Dinv", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Factor3", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Factor3", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["GramPFunction", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "GramPFunction", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jExtRules", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jExtRules", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jVars", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jVars", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["PolyMapToVPInv", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "PolyMapToVPInv", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SR", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "SR", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$LiteRedMonitor", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "$LiteRedMonitor", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["BasisDirectory", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "BasisDirectory", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["DiskRecover", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "DiskRecover", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["FeynParUF", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "FeynParUF", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["Highj", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "Highj", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jGraph", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jGraph", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["LI", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "LI", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["PolyNForm", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "PolyNForm", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["SubstituteAlways", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "SubstituteAlways", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$LiteRedReleaseDate", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "$LiteRedReleaseDate", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], ""},
+               {
+                ButtonBox[
+                 StyleBox["BasisSectors", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "BasisSectors", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["DiskSave", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "DiskSave", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["FeynParUFFunction", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "FeynParUFFunction", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["HighjIndex", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "HighjIndex", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["jPattern", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "jPattern", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["LMs", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "LMs", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["PolyVPInv", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "PolyVPInv", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["ToAB", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "ToAB", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], 
+                ButtonBox[
+                 StyleBox["$LiteRedVersion", "InformationGridButton"],
+                 Appearance->None,
+                 BaseStyle->"InformationGridLink",
+                 
+                 ButtonData:>{
+                  "Info-682f7b3f-b413-496c-a105-8862e9281047", {
+                   "$LiteRedVersion", "LiteRed`"}, False},
+                 ButtonNote->"LiteRed`",
+                 Evaluator->Automatic], ""}
+              },
+              DefaultBaseStyle->"Text",
+              
+              GridBoxAlignment->{
+               "Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+              GridBoxItemSize->{"Columns" -> {{
+                   Scaled[0.095]}}}],
+             ImageMargins->{{10, 0}, {0, 2}}]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+         FrameMargins->{{0, 0}, {8, 0}}]}, Dynamic[Typeset`open$$],
+        ImageSize->Automatic]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxDividers->{"ColumnsIndexed" -> {{False}}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.8]}, 
+        Offset[0.2]}}],
+   BaseStyle->"InformationTitleFrame"], "InformationGridPlain"]], "Output",
+ CellChangeTimes->{{3.8346584708296976`*^9, 3.834658482525217*^9}, 
+   3.83465869154873*^9, 3.8346587987518325`*^9, 3.8346593524783974`*^9, 
+   3.834660174347269*^9, 3.834661106388158*^9, 3.834661161867111*^9, 
+   3.8347254960439615`*^9, 3.835074312085472*^9, 3.835074347385191*^9, 
+   3.835244857562212*^9, 3.835245234751252*^9, 3.8352453527073717`*^9, 
+   3.8352454749677377`*^9, 3.8352456850344424`*^9, 3.835246269377308*^9, 
+   3.835246532181514*^9, 3.8352471625436416`*^9, 3.8352472118002596`*^9, 
+   3.8352472733314896`*^9, 3.8352473443640313`*^9, 3.835247581967399*^9, 
+   3.8352599723496656`*^9, 3.8353510241136246`*^9, 3.835351218937678*^9, 
+   3.835351325056401*^9, {3.835351399973647*^9, 3.8353514177220535`*^9}, 
+   3.835422838391974*^9, 3.841383343253723*^9, 3.841383640742175*^9, 
+   3.841384451648308*^9, 3.841387027949813*^9, 3.841403333461315*^9, 
+   3.841405111933462*^9, 3.8414166602398033`*^9, 3.841416951102425*^9, 
+   3.8418173726569185`*^9, 3.841818653478962*^9, 3.841849410263893*^9, 
+   3.841849686928893*^9, {3.841849720101699*^9, 3.8418497415303807`*^9}, 
+   3.8418859352761683`*^9, 3.841896623996039*^9, 3.842082496070845*^9, 
+   3.8420848721984625`*^9, 3.8422756403101377`*^9, 3.843630075936803*^9, 
+   3.843713066469474*^9, 3.8437142351115046`*^9, 3.8437146650999575`*^9, 
+   3.8437158227793207`*^9, 3.8437161858232636`*^9, 3.8437231356718273`*^9, {
+   3.8437261214843473`*^9, 3.843726148022088*^9}, 3.843798669569837*^9, 
+   3.84380997366118*^9, 3.8438103773841267`*^9, {3.8438104195814366`*^9, 
+   3.8438104453337817`*^9}, 3.843810624442512*^9, 3.8438116595282745`*^9, 
+   3.8438149065493646`*^9, 3.843828323104974*^9, 3.8438330494868526`*^9, 
+   3.843975503770489*^9, 3.8441540898443317`*^9, 3.844157610069893*^9, 
+   3.8441586875008974`*^9, 3.844168427530644*^9, 3.844181409826936*^9, 
+   3.8441880473585477`*^9, 3.8442430724386487`*^9, 3.8443366932067866`*^9, 
+   3.8443367556336093`*^9, 3.8443603501165223`*^9, 3.8444048118619194`*^9, 
+   3.8450109655108595`*^9, 3.8453695521593657`*^9, 3.845636207812388*^9, 
+   3.845646619532277*^9, 3.8456528721765175`*^9, 3.84565302361895*^9, 
+   3.848132060379375*^9, 3.8481321709888353`*^9, 3.848132246145645*^9, 
+   3.848132379347234*^9, 3.848132433718113*^9, {3.8481325351166487`*^9, 
+   3.848132555891683*^9}, 3.848132651612753*^9, {3.8481327177990437`*^9, 
+   3.8481327362907143`*^9}, 3.848133710667164*^9, 3.848395123618935*^9, 
+   3.8582285883715067`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"b428aa2b-65fb-45f1-9737-74f45f481961"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input",
+ CellLabel->"In[3]:=",ExpressionUUID->"b7c4b14d-d7ad-4daf-af72-852eff16dee1"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"SetDim", "[", "d", "]"}], ";"}], 
+   RowBox[{"(*", 
+    RowBox[{
+    "d", " ", "stands", " ", "for", " ", "the", " ", "dimensionality"}], 
+    "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.8346573013175955`*^9, 3.834657311925975*^9}, {
+   3.8346575357379584`*^9, 3.8346576215182967`*^9}, {3.8346577721198893`*^9, 
+   3.8346577796281605`*^9}, {3.8346582895704803`*^9, 3.8346583078526373`*^9}, 
+   3.834658788826197*^9, {3.834661064556571*^9, 3.834661092429286*^9}, {
+   3.8353511898239784`*^9, 3.835351199368721*^9}, {3.8353513864252453`*^9, 
+   3.8353514093550005`*^9}, {3.8413798639594746`*^9, 
+   3.8413798954973993`*^9}, {3.8413800666701508`*^9, 
+   3.8413800748358774`*^9}, {3.8413832476422176`*^9, 3.841383253481423*^9}, {
+   3.841383388299486*^9, 3.8413833936127505`*^9}, {3.841383616174165*^9, 
+   3.841383625624057*^9}, {3.841405097217079*^9, 3.8414050987455454`*^9}, {
+   3.8414054705543113`*^9, 3.8414055057537584`*^9}, {3.841416639715044*^9, 
+   3.841416641258135*^9}, {3.8414169351953444`*^9, 3.8414169363127875`*^9}, {
+   3.8418495956829844`*^9, 3.8418496368039064`*^9}, {3.8418497043578076`*^9, 
+   3.841849730088022*^9}, {3.8418854398272696`*^9, 3.841885458500783*^9}, 
+   3.84188579151962*^9, 3.84188583366094*^9, {3.8418858769678993`*^9, 
+   3.841885878019508*^9}, {3.84207189233638*^9, 3.842071911193883*^9}, 
+   3.8420719976575923`*^9, 3.8420720289214263`*^9, {3.8420847456084046`*^9, 
+   3.842084778705759*^9}, {3.8436300190458393`*^9, 3.843630041362482*^9}, {
+   3.8437129050439696`*^9, 3.8437129306522264`*^9}, {3.843712965374407*^9, 
+   3.8437129874396257`*^9}, {3.8437140642386956`*^9, 
+   3.8437140984977016`*^9}, {3.843714155518975*^9, 3.8437141819378805`*^9}, 
+   3.843714645096568*^9, {3.843715772520011*^9, 3.8437157987710996`*^9}, 
+   3.8437161627591987`*^9, {3.8437229615469856`*^9, 3.8437229642779016`*^9}, 
+   3.8437260777712193`*^9, {3.843798584159397*^9, 3.8437985858982544`*^9}, {
+   3.8438103334335427`*^9, 3.843810350194873*^9}, {3.843810400431861*^9, 
+   3.8438104284229436`*^9}, {3.8438105730857677`*^9, 3.8438105897606106`*^9}, 
+   3.843810773566962*^9, {3.843814623353202*^9, 3.84381463744228*^9}, 
+   3.843814753004157*^9, 3.843828238767212*^9, {3.8438283099816413`*^9, 
+   3.8438283101673117`*^9}, {3.8438330060174932`*^9, 
+   3.8438330086319284`*^9}, {3.8439718302588606`*^9, 3.8439718506893125`*^9}, 
+   3.844154011350031*^9, 3.844157433980068*^9, 3.8441585734379845`*^9, {
+   3.844181388483908*^9, 3.844181390393691*^9}, {3.844181590689581*^9, 
+   3.8441815919388795`*^9}, 3.8442430070512915`*^9, 3.845369111055314*^9, {
+   3.8453693198760633`*^9, 3.845369361795755*^9}, {3.845369531578559*^9, 
+   3.8453695317139745`*^9}, {3.845369595854764*^9, 3.8453695969947653`*^9}, {
+   3.845369800649254*^9, 3.8453698115741253`*^9}, 3.845372788957058*^9, {
+   3.8456344962868695`*^9, 3.8456345143161445`*^9}, 3.8481319209186773`*^9},
+ CellLabel->"In[4]:=",ExpressionUUID->"427d67a9-d03e-4ea6-99d9-cd4a7a3f67d4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"<<", "LiteRed`"}], 
+  RowBox[{"(*", 
+   RowBox[{"Loading", " ", "the", " ", "package"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetDirectory", "[", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"Setting", " ", "working", " ", "directory"}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetDim", "[", "d", "]"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "d", " ", "stands", " ", "for", " ", "the", " ", "dimensionality"}], 
+   "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"Declare", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"k2", ",", "k3", ",", "q", ",", "v1", ",", "v2"}], "}"}], ",", 
+    "Vector"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sp", "[", 
+    RowBox[{"q", ",", "q"}], "]"}], "=", 
+   RowBox[{"-", 
+    RowBox[{"mQ", "^", "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sp", "[", 
+    RowBox[{"q", ",", "v1"}], "]"}], "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sp", "[", 
+    RowBox[{"v1", ",", "q"}], "]"}], "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sp", "[", 
+    RowBox[{"q", ",", "v2"}], "]"}], "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sp", "[", 
+    RowBox[{"v2", ",", "q"}], "]"}], "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sp", "[", 
+    RowBox[{"v2", ",", "v1"}], "]"}], "=", "\[Gamma]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sp", "[", 
+    RowBox[{"v2", ",", "v2"}], "]"}], "=", "1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"sp", "[", 
+     RowBox[{"v1", ",", "v1"}], "]"}], "=", "1"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"<<", "\"\<v36LRpp dir/v36LRpp\>\""}], ";"}]}], "Input",
+ CellChangeTimes->{
+  3.841885870814085*^9, {3.84441089919788*^9, 3.844410982875032*^9}, {
+   3.8453690828497825`*^9, 3.845369091508072*^9}, 3.8453698221371717`*^9, {
+   3.8456360317093515`*^9, 3.8456360335497904`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"c8db2576-e58a-4b95-916a-6bb0ec377b52"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"**************** \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"LiteRed v1.83\"\>",
+    StripOnInput->False,
+    LineColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FrontFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    BackFaceColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    GraphicsColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]],
+    FontWeight->Bold,
+    FontColor->RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]], 
+   "\[InvisibleSpace]", "\<\" ********************\\nAuthor: Roman N. Lee, \
+Budker Institute of Nuclear Physics, Novosibirsk.\\nRelease Date: \
+11.01.2020\\nLiteRed stands for Loop InTEgrals REDuction.\\nThe package is \
+designed for the search and application of the Integration-By-Part reduction \
+rules. It also contains some other useful tools.\\nInput file timestamp: Mon \
+11 Jan 2021 17:19:14\\nSee ?LiteRed`* for a list of functions. \"\>"}],
+  SequenceForm["**************** ", 
+   Style["LiteRed v1.83", {Bold, 
+     RGBColor[1, 
+      Rational[1, 3], 
+      Rational[1, 3]]}], 
+   " ********************\nAuthor: Roman N. Lee, Budker Institute of Nuclear \
+Physics, Novosibirsk.\nRelease Date: 11.01.2020\nLiteRed stands for Loop \
+InTEgrals REDuction.\nThe package is designed for the search and application \
+of the Integration-By-Part reduction rules. It also contains some other \
+useful tools.\nInput file timestamp: Mon 11 Jan 2021 17:19:14\nSee ?LiteRed`* \
+for a list of functions. "],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.848132717886635*^9, 3.848132736415613*^9}, 
+   3.848133710766634*^9, 3.848395123721859*^9, 3.85822858841741*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"fe87cd16-f3f1-41d9-8a86-5d525f4647b0"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"int", "[", 
+    RowBox[{
+    "i1_", ",", "i2_", ",", "i3_", ",", "i4_", ",", "i5_", ",", "i6_", ",", 
+     "i7_"}], "]"}], ":=", 
+   RowBox[{"j", "[", 
+    RowBox[{"v36LRpp", ",", 
+     RowBox[{"-", "i1"}], ",", 
+     RowBox[{"-", "i2"}], ",", 
+     RowBox[{"-", "i3"}], ",", 
+     RowBox[{"-", "i4"}], ",", 
+     RowBox[{"-", "i5"}], ",", 
+     RowBox[{"-", "i6"}], ",", 
+     RowBox[{"-", "i7"}], ",", "1", ",", "1"}], "]"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.8346594575258007`*^9, 3.834659477981167*^9}, {
+   3.8346595245553675`*^9, 3.834659534747117*^9}, {3.834659645522211*^9, 
+   3.8346596475002756`*^9}, {3.8346601437405653`*^9, 3.834660145483992*^9}, {
+   3.8346611246171765`*^9, 3.8346611277351017`*^9}, {3.8346611940478163`*^9, 
+   3.8346611955224266`*^9}, 3.835247389800164*^9, 3.8353511189434867`*^9, 
+   3.835351315713354*^9, {3.841383268749546*^9, 3.841383286477993*^9}, {
+   3.841383630351338*^9, 3.8413836304788156`*^9}, {3.8418495797327213`*^9, 
+   3.841849590552266*^9}, 3.841861004231513*^9, {3.8418861507708964`*^9, 
+   3.8418861704515567`*^9}, {3.842071920609745*^9, 3.842071921859359*^9}, 
+   3.8420723859609966`*^9, 3.843712943273327*^9, 3.843713428637644*^9, {
+   3.8439718569559546`*^9, 3.8439718571156797`*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"6ed8431f-0421-4c47-b0be-a8d682fd2014"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"intDiagcs1", "=", 
+    RowBox[{"Import", "[", "\"\<Integrands/integrandsDiagcs1.wl\>\"", "]"}]}],
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.8346576396138563`*^9, 3.8346576410287476`*^9}, 
+   3.8346582665843077`*^9, {3.834658649202423*^9, 3.8346586626428375`*^9}, {
+   3.8346587279273386`*^9, 3.834658729788749*^9}, 3.834658777403397*^9, 
+   3.834658850392161*^9, {3.8346596234476967`*^9, 3.834659624887063*^9}, 
+   3.834661153363181*^9, {3.8418861375055523`*^9, 3.8418861418325653`*^9}, {
+   3.8420723882035723`*^9, 3.8420723988030806`*^9}, {3.843718828089163*^9, 
+   3.8437188377540503`*^9}, {3.84415403551399*^9, 3.844154035797866*^9}, 
+   3.844243039886091*^9, {3.8443365603183117`*^9, 3.8443365704602485`*^9}, {
+   3.8443531968812838`*^9, 3.8443532057818284`*^9}, {3.8443578604405003`*^9, 
+   3.8443578656665497`*^9}, {3.84564721290091*^9, 3.845647213620227*^9}, {
+   3.845648218146432*^9, 3.8456482225903325`*^9}, {3.8458932488111906`*^9, 
+   3.845893266337663*^9}, {3.845899386858967*^9, 3.845899396685335*^9}, 
+   3.8458998409437957`*^9, {3.84590912192715*^9, 3.845909127175334*^9}, {
+   3.848131929624559*^9, 3.848131956371213*^9}, 3.848131994067397*^9, 
+   3.848394778929967*^9, {3.858224508147811*^9, 3.858224510355085*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"fb90ddd7-cbef-47fe-b2c5-7185685b8553"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"newMaster", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "0", ",", "0", ",", "1", ",", "1", ",", "0", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "0"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "0", ",", "1", ",", "1", ",", "0", ",", "1", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "0", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "0", ",", "0", ",", "0", ",", "2", ",", "1", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "2"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "0", ",", "0", ",", "0", ",", "2", ",", "1", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "0", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "0", ",", "1", ",", "1", ",", "0", ",", "1", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "0", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"int", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "1", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1"}], 
+          "}"}], ",", 
+         RowBox[{"4", "-", 
+          RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}]}], "}"}]}], ";"}], "\n",
+    "\[IndentingNewLine]", "\n", "\n", "\[IndentingNewLine]", 
+   RowBox[{"masterRecalculated", "=", 
+    RowBox[{"IBPReduce", "[", 
+     RowBox[{"(", 
+      RowBox[{"newMaster", "//.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"int", "[", 
+           RowBox[{"2", ",", "1"}], "]"}], "[", 
+          RowBox[{"1", ",", 
+           RowBox[{"{", 
+            RowBox[{
+            "i1_", ",", "i2_", ",", "i3_", ",", "i4_", ",", "i5_", ",", "i6_",
+              ",", "i7_"}], "}"}], ",", 
+           RowBox[{"4", "-", 
+            RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], "\[Rule]", 
+         RowBox[{"j", "[", 
+          RowBox[{
+          "v36LRpp", ",", "i3", ",", "i4", ",", "i6", ",", "i7", ",", "i5", 
+           ",", "i1", ",", "i2", ",", "1", ",", "1"}], "]"}]}], "}"}]}], 
+      ")"}], "]"}]}], "\n", "\n"}]}]], "Input",
+ CellChangeTimes->{{3.834659193030797*^9, 3.834659228585739*^9}, {
+   3.8346592746572995`*^9, 3.834659301384695*^9}, {3.8350742685290937`*^9, 
+   3.8350742894519343`*^9}, {3.8350743325205507`*^9, 3.835074336772676*^9}, {
+   3.835247376111675*^9, 3.835247384702439*^9}, {3.8352474310003757`*^9, 
+   3.8352474332951107`*^9}, 3.835351173615576*^9, {3.8413799359279213`*^9, 
+   3.8413799475988765`*^9}, 3.8413844183755455`*^9, 3.841403305849284*^9, {
+   3.841813135742501*^9, 3.841813154125074*^9}, {3.8418175268609858`*^9, 
+   3.84181755706785*^9}, {3.841849571842021*^9, 3.841849576070446*^9}, 
+   3.8418608189061174`*^9, 3.8418609636794786`*^9, 3.8418610109845376`*^9, 
+   3.84188613182506*^9, {3.8418863172335587`*^9, 3.841886335784997*^9}, 
+   3.841886537743023*^9, 3.8420724061646366`*^9, {3.8437134529574413`*^9, 
+   3.8437134799442673`*^9}, {3.843713532781088*^9, 3.843713598583845*^9}, {
+   3.843713660313306*^9, 3.843713818953354*^9}, {3.8437139946775517`*^9, 
+   3.843714029194453*^9}, {3.8437152279603205`*^9, 3.8437152305773516`*^9}, {
+   3.8437183367372594`*^9, 3.8437183681330433`*^9}, {3.8437188141807766`*^9, 
+   3.843718817218205*^9}, {3.8437188775842113`*^9, 3.843718884126848*^9}, {
+   3.84381182820916*^9, 3.8438118364541006`*^9}, {3.8439718608628693`*^9, 
+   3.8439718610382786`*^9}, {3.844157160510092*^9, 3.844157161749777*^9}, {
+   3.8441574889364367`*^9, 3.8441575628491945`*^9}, {3.8441579470092697`*^9, 
+   3.844157972721336*^9}, {3.8441591516794915`*^9, 3.844159153436792*^9}, {
+   3.8441714569836235`*^9, 3.8441714585104094`*^9}, {3.8441879625745173`*^9, 
+   3.8441879825320497`*^9}, 3.845629865090103*^9},
+ CellLabel->"In[20]:=",ExpressionUUID->"a9afdb65-e1e3-4e07-bbba-0cb6db572dd4"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "1", 
+     ",", "0", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"j", "[", 
+      RowBox[{
+      "v36LRpp", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "0", 
+       ",", "0", ",", "2", ",", "1"}], "]"}], 
+     RowBox[{
+      RowBox[{"-", "3"}], "+", "d"}]]}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0", 
+     ",", "1", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "0", 
+     ",", "1", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"12", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "4"}], "+", "d"}], ")"}], "2"], " ", 
+       RowBox[{"j", "[", 
+        RowBox[{
+        "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "0",
+          ",", "0", ",", "1", ",", "1"}], "]"}]}], 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "6"}], "+", "d"}], ")"}], "2"], " ", 
+       SuperscriptBox["mQ", "6"], " ", "\[Gamma]"}]]}], "+", 
+    FractionBox[
+     RowBox[{"2", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "16"}], "+", 
+        RowBox[{"3", " ", "d"}]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "14"}], "+", 
+        RowBox[{"3", " ", "d"}]}], ")"}], " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", 
+        ",", "1", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", "d"}], ")"}], "2"], " ", 
+      SuperscriptBox["mQ", "4"]}]], "-", 
+    FractionBox[
+     RowBox[{"4", " ", 
+      RowBox[{"(", 
+       RowBox[{"152", "-", 
+        RowBox[{"61", " ", "d"}], "+", 
+        RowBox[{"6", " ", 
+         SuperscriptBox["d", "2"]}], "+", 
+        RowBox[{"64", " ", 
+         SuperscriptBox["\[Gamma]", "2"]}], "-", 
+        RowBox[{"23", " ", "d", " ", 
+         SuperscriptBox["\[Gamma]", "2"]}], "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["d", "2"], " ", 
+         SuperscriptBox["\[Gamma]", "2"]}]}], ")"}], " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "2", ",", "0", 
+        ",", "0", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", "d"}], ")"}], "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+      SuperscriptBox["mQ", "4"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], " ", "\[Gamma]", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", "\[Gamma]"}], ")"}]}]], "-", 
+    FractionBox[
+     RowBox[{"8", " ", 
+      RowBox[{"(", 
+       RowBox[{"113", "-", 
+        RowBox[{"48", " ", "d"}], "+", 
+        RowBox[{"5", " ", 
+         SuperscriptBox["d", "2"]}]}], ")"}], " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "0", ",", "0", ",", "2", ",", "1", ",", "1", ",", "0", 
+        ",", "0", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", "d"}], ")"}], "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+      SuperscriptBox["mQ", "4"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], " ", "\[Gamma]", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", "\[Gamma]"}], ")"}]}]], "+", 
+    FractionBox[
+     RowBox[{"32", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "3"}], "+", "d"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "9"}], "+", 
+        RowBox[{"2", " ", "d"}]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "7"}], "+", 
+        RowBox[{"2", " ", "d"}]}], ")"}], " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "0", 
+        ",", "0", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "6"}], "+", "d"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "d"}], ")"}], " ", 
+      SuperscriptBox["mQ", "6"], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], "2"], " ", "\[Gamma]", 
+      " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", "\[Gamma]"}], ")"}], "2"]}]], "-", 
+    FractionBox[
+     RowBox[{"8", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "11"}], "+", 
+        RowBox[{"2", " ", "d"}]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "9"}], "+", 
+        RowBox[{"2", " ", "d"}]}], ")"}], " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "2", 
+        ",", "0", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "6"}], "+", "d"}], ")"}], "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+      SuperscriptBox["mQ", "4"], " ", "\[Gamma]"}]], "-", 
+    FractionBox[
+     RowBox[{"8", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "4"}], "+", "d"}], ")"}], "2"], " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0", 
+        ",", "0", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "6"}], "+", "d"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+      SuperscriptBox["mQ", "4"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], " ", "\[Gamma]", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", "\[Gamma]"}], ")"}]}]], "+", 
+    FractionBox[
+     RowBox[{"2", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "1", 
+        ",", "1", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "6"}], "+", "d"}], ")"}], " ", 
+      SuperscriptBox["mQ", "2"]}]], "-", 
+    FractionBox[
+     RowBox[{"4", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", 
+        ",", "0", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "6"}], "+", "d"}], ")"}], " ", 
+      SuperscriptBox["mQ", "2"], " ", "\[Gamma]"}]], "-", 
+    FractionBox[
+     RowBox[{"2", " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "0", 
+        ",", "0", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", "\[Gamma]"}]]}], ",", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"2", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "4"}], "+", "d"}], ")"}], " ", 
+       RowBox[{"j", "[", 
+        RowBox[{
+        "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "0",
+          ",", "0", ",", "2", ",", "1"}], "]"}]}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+       SuperscriptBox["mQ", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}]}]]}], "+", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "d"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "13"}], "+", 
+        RowBox[{"3", " ", "d"}]}], ")"}], " ", 
+      RowBox[{"j", "[", 
+       RowBox[{
+       "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "0", 
+        ",", "1", ",", "1", ",", "1"}], "]"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+      SuperscriptBox["mQ", "2"]}]]}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "0", 
+     ",", "0", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "0", ",", "0", ",", "2", ",", "1", ",", "1", ",", "0", 
+     ",", "0", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "2", ",", "0", 
+     ",", "0", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", "0", 
+     ",", "0", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0", 
+     ",", "0", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", 
+     ",", "0", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "0", 
+     ",", "0", ",", "1", ",", "1"}], "]"}], ",", 
+   RowBox[{"j", "[", 
+    RowBox[{
+    "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", 
+     ",", "1", ",", "1", ",", "1"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.8437138064300346`*^9, 3.8437138195282545`*^9}, 
+   3.8437139993901463`*^9, 3.8437140304056654`*^9, 3.8437144911192913`*^9, 
+   3.8437149244872017`*^9, 3.843718727129405*^9, {3.8437187951186104`*^9, 
+   3.8437188182313747`*^9}, 3.843718897761468*^9, 3.8437256473012004`*^9, 
+   3.8437260888884926`*^9, 3.843728495330858*^9, 3.8438008571739454`*^9, 
+   3.8438103788744726`*^9, 3.8438104211462507`*^9, 3.843813834896019*^9, 
+   3.843817873011835*^9, 3.843830934319613*^9, 3.843835775357055*^9, 
+   3.84397782446946*^9, 3.844156677369407*^9, 3.8441579135845222`*^9, 
+   3.8441579748287992`*^9, 3.8441712946944714`*^9, 3.8442453284358826`*^9, 
+   3.8443390896751795`*^9, 3.8443627808926506`*^9, 3.8444072009083147`*^9, 
+   3.844411284616246*^9, 3.8444132120613966`*^9, 3.8444475388158226`*^9, 
+   3.8444494044566994`*^9, 3.8444517227580695`*^9, 3.844452634366979*^9, 
+   3.8444918008578324`*^9, 3.844496199458685*^9, 3.844506403329057*^9, 
+   3.844511117201831*^9, 3.8445111509964185`*^9, 3.844940840861898*^9, 
+   3.8450110133479633`*^9, 3.845016146975029*^9, 3.8450227847205505`*^9, 
+   3.8450250157343454`*^9, 3.845042329212803*^9, 3.845101417344984*^9, 
+   3.84536825384208*^9, 3.845369553803963*^9, 3.8453729848238373`*^9, 
+   3.8456078127738047`*^9, 3.845610267528381*^9, 3.845612828143047*^9, 
+   3.8456162581139135`*^9, 3.8456299252975993`*^9, 3.8456335041758275`*^9, 
+   3.8456387782817287`*^9, 3.845639914912943*^9, 3.8456412739240727`*^9, 
+   3.8456488055101566`*^9, 3.8456510593974843`*^9, 3.84565297702766*^9, 
+   3.8456554445021505`*^9, 3.8456608383594327`*^9, 3.84572046134929*^9, 
+   3.8457292876652284`*^9, 3.8458799704673405`*^9, 3.8458833015497637`*^9, 
+   3.845885447451795*^9, 3.8458963529400764`*^9, 3.845911029021371*^9, 
+   3.8459553386369567`*^9, 3.8460682896937523`*^9, 3.8460724170461254`*^9, 
+   3.846073318708256*^9, 3.848132065920192*^9, 3.848132171420765*^9, 
+   3.848132246472866*^9, 3.8481323797172728`*^9, 3.84813243417682*^9, {
+   3.848132535556797*^9, 3.8481325563756227`*^9}, 3.848132652051889*^9, {
+   3.848132718802599*^9, 3.848132738029023*^9}, 3.848133712323708*^9, 
+   3.848395125119985*^9, 3.858228589269752*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"4c860e78-5a3b-4bbc-880b-092600818ebe"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.8437139163030577`*^9, {3.8437150216371884`*^9, 3.843715051432639*^9}, 
+   3.843715226055418*^9},
+ CellLabel->"In[22]:=",ExpressionUUID->"e5d60369-2fff-44d5-8e81-c369bdd8664e"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8437139193003936`*^9, 3.843713961727027*^9}, {
+  3.8437142143721247`*^9, 3.84371422270112*^9}, {3.8437149860892572`*^9, 
+  3.8437150062887774`*^9}, {3.8437152191242476`*^9, 3.843715221139852*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"1b84043f-6c0f-44c7-bbb3-408789a6f268"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"repl1", "=", 
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"newMaster", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "\[Equal]", 
+        RowBox[{"masterRecalculated", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+       RowBox[{"{", " ", 
+        RowBox[{"j", "[", 
+         RowBox[{
+         "v36LRpp", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", 
+          "0", ",", "0", ",", "2", ",", "1"}], "]"}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"repl2", "=", 
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"newMaster", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], "\[Equal]", 
+         RowBox[{"masterRecalculated", "[", 
+          RowBox[{"[", "5", "]"}], "]"}]}], "//.", "repl1"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", "[", 
+         RowBox[{
+         "v36LRpp", ",", "0", ",", "1", ",", "0", ",", "1", ",", "1", ",", 
+          "2", ",", "0", ",", "1", ",", "1"}], "]"}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"repl3", "=", 
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"newMaster", "[", 
+         RowBox[{"[", "6", "]"}], "]"}], "\[Equal]", 
+        RowBox[{"masterRecalculated", "[", 
+         RowBox[{"[", "6", "]"}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", "[", 
+         RowBox[{
+         "v36LRpp", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", 
+          "0", ",", "0", ",", "2", ",", "1"}], "]"}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\n"}], "\n"}], "Input",
+ CellChangeTimes->{{3.8437181762325497`*^9, 3.843718256429759*^9}, {
+   3.843718294415187*^9, 3.8437183063844995`*^9}, 3.84371893668029*^9, {
+   3.8437189733276515`*^9, 3.843719013216711*^9}, 3.8438091059158154`*^9, {
+   3.843813950250622*^9, 3.8438139691094666`*^9}, 3.8438140533017445`*^9, {
+   3.843971864795106*^9, 3.8439718707314367`*^9}, {3.8441575929390154`*^9, 
+   3.844157594680312*^9}, {3.8441579909648128`*^9, 3.844158001104286*^9}, {
+   3.844158078702953*^9, 3.8441581239085474`*^9}, 3.8441581951116657`*^9, {
+   3.8441879885325804`*^9, 3.8441880319994116`*^9}, 3.844245488900976*^9, 
+   3.844245536584326*^9, {3.844245578234223*^9, 3.844245585196822*^9}, {
+   3.845629868404349*^9, 3.845629873359372*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"b2efeadb-814a-4200-a876-9deb5ba126b5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"diagcs1Int", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"IBPReduce", "[", "intDiagcs1", "]"}], "//.", "repl1"}], "//.",
+         "repl2"}], "//.", "repl3"}], "//.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"j", "[", 
+          RowBox[{
+          "v36LRpp", ",", "i1_", ",", "i2_", ",", "i3_", ",", "i4_", ",", 
+           "i5_", ",", "i6_", ",", "i7_", ",", "1", ",", "1"}], "]"}], 
+         "\[Rule]", 
+         RowBox[{
+          RowBox[{"intRes", "[", 
+           RowBox[{"2", ",", "1"}], "]"}], "[", 
+          RowBox[{"1", ",", 
+           RowBox[{"{", 
+            RowBox[{
+            "i6", ",", "i7", ",", "i1", ",", "i2", ",", "i5", ",", "i3", ",", 
+             "i4"}], "}"}], ",", 
+           RowBox[{"4", "-", 
+            RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}]}], ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"int", "[", 
+           RowBox[{"2", ",", "1"}], "]"}], "[", 
+          RowBox[{"1", ",", 
+           RowBox[{"{", 
+            RowBox[{
+            "i1_", ",", "i2_", ",", "i3_", ",", "i4_", ",", "i5_", ",", "i6_",
+              ",", "i7_"}], "}"}], ",", 
+           RowBox[{"4", "-", 
+            RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}], "\[Rule]", 
+         RowBox[{
+          RowBox[{"intRes", "[", 
+           RowBox[{"2", ",", "1"}], "]"}], "[", 
+          RowBox[{"1", ",", 
+           RowBox[{"{", 
+            RowBox[{
+            "i1", ",", "i2", ",", "i3", ",", "i4", ",", "i5", ",", "i6", ",", 
+             "i7"}], "}"}], ",", 
+           RowBox[{"4", "-", 
+            RowBox[{"2", "*", "\[Epsilon]"}]}]}], "]"}]}]}], "}"}]}], "//.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"u1", " ", "v1"}], " ", "\[Rule]", "1"}], ",", " ", 
+       RowBox[{
+        RowBox[{"u1", " ", "v2"}], " ", "\[Rule]", " ", "\[Gamma]"}], ",", 
+       " ", 
+       RowBox[{
+        RowBox[{"u2", " ", "v2"}], " ", "\[Rule]", " ", "1"}], ",", " ", 
+       RowBox[{
+        RowBox[{"u2", " ", "v1"}], "\[Rule]", " ", "\[Gamma]"}]}], "}"}]}], "//",
+     "Simplify"}]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.83465948440298*^9, 3.834659510266363*^9}, 
+   3.83466016463569*^9, {3.841886208670457*^9, 3.8418862126042747`*^9}, 
+   3.8420719273576927`*^9, {3.8420724095236216`*^9, 3.842072437732171*^9}, {
+   3.8420833729477386`*^9, 3.842083393323196*^9}, {3.8437129479382143`*^9, 
+   3.843712952399006*^9}, {3.843713028297653*^9, 3.843713032605751*^9}, {
+   3.8437182649905276`*^9, 3.8437182806059313`*^9}, 3.843718847116725*^9, {
+   3.8437190576766863`*^9, 3.843719095949695*^9}, {3.8437229994876366`*^9, 
+   3.8437230810882077`*^9}, {3.8437260316063795`*^9, 3.843726045408889*^9}, {
+   3.843728668432269*^9, 3.8437286938615465`*^9}, {3.843730009356776*^9, 
+   3.8437300111250486`*^9}, {3.8439718741854267`*^9, 3.843971876394298*^9}, {
+   3.8443365790753717`*^9, 3.844336590106763*^9}, {3.8443532229396596`*^9, 
+   3.8443532315530243`*^9}, {3.8443578733639636`*^9, 
+   3.8443578781761093`*^9}, {3.8453694427034235`*^9, 3.845369503627104*^9}, {
+   3.8456298756083612`*^9, 3.845629885003015*^9}, 3.8456398879505224`*^9, {
+   3.8456472070794487`*^9, 3.8456472081745663`*^9}, {3.845648228477584*^9, 
+   3.8456482323211823`*^9}, {3.8458932735442924`*^9, 3.845893293087064*^9}, {
+   3.845899368794633*^9, 3.8458993805129356`*^9}, 3.8458998445524225`*^9, {
+   3.845909131945117*^9, 3.8459091392098217`*^9}, {3.848131970900794*^9, 
+   3.848131984707193*^9}, {3.848133691780308*^9, 3.84813369191665*^9}, 
+   3.848394767877151*^9},
+ CellLabel->"In[27]:=",ExpressionUUID->"338a9da5-f306-414e-ba69-df5462ce9398"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            FractionBox["1", 
+             RowBox[{"4", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "3"}], "+", "d"}], ")"}], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "2"}], "+", "d"}], ")"}], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "d"}], ")"}], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "10"}], "+", 
+                RowBox[{"3", " ", "d"}]}], ")"}], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "8"}], "+", 
+                RowBox[{"3", " ", "d"}]}], ")"}], " ", "\[Gamma]", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", 
+                 SuperscriptBox["\[Gamma]", "2"]}], ")"}], "2"]}]], 
+            SuperscriptBox["mQ", "4"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "3"}], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"9", " ", 
+                  SuperscriptBox["d", "5"], " ", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    RowBox[{"18", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"25", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}], "+", 
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["\[Gamma]", "6"]}]}], ")"}]}], "-", 
+                 RowBox[{"9", " ", 
+                  SuperscriptBox["d", "4"], " ", 
+                  RowBox[{"(", 
+                   RowBox[{"13", "+", 
+                    RowBox[{"240", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"345", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}], "+", 
+                    RowBox[{"58", " ", 
+                    SuperscriptBox["\[Gamma]", "6"]}]}], ")"}]}], "-", 
+                 RowBox[{"20", " ", 
+                  RowBox[{"(", 
+                   RowBox[{"32", "+", 
+                    RowBox[{"765", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"1510", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}], "+", 
+                    RowBox[{"388", " ", 
+                    SuperscriptBox["\[Gamma]", "6"]}]}], ")"}]}], "+", 
+                 RowBox[{
+                  SuperscriptBox["d", "3"], " ", 
+                  RowBox[{"(", 
+                   RowBox[{"584", "+", 
+                    RowBox[{"11179", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"16866", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}], "+", 
+                    RowBox[{"3039", " ", 
+                    SuperscriptBox["\[Gamma]", "6"]}]}], ")"}]}], "+", 
+                 RowBox[{"4", " ", "d", " ", 
+                  RowBox[{"(", 
+                   RowBox[{"388", "+", 
+                    RowBox[{"8384", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"14730", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}], "+", 
+                    RowBox[{"3273", " ", 
+                    SuperscriptBox["\[Gamma]", "6"]}]}], ")"}]}], "-", 
+                 RowBox[{
+                  SuperscriptBox["d", "2"], " ", 
+                  RowBox[{"(", 
+                   RowBox[{"1388", "+", 
+                    RowBox[{"27945", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"45010", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}], "+", 
+                    RowBox[{"8893", " ", 
+                    SuperscriptBox["\[Gamma]", "6"]}]}], ")"}]}]}], ")"}], 
+               " ", 
+               RowBox[{
+                RowBox[{"intRes", "[", 
+                 RowBox[{"2", ",", "1"}], "]"}], "[", 
+                RowBox[{"1", ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                  "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", 
+                   "1"}], "}"}], ",", 
+                 RowBox[{"4", "-", 
+                  RowBox[{"2", " ", "\[Epsilon]"}]}]}], "]"}]}], "+", 
+              FractionBox[
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "5"}], "+", "d"}], ")"}], " ", 
+                SuperscriptBox["mQ", "2"], " ", 
+                TemplateBox[{"1"},
+                 "OutputSizeLimit`Skeleton"], " ", 
+                RowBox[{
+                 RowBox[{"intRes", "[", 
+                  RowBox[{"2", ",", "1"}], "]"}], "[", 
+                 TemplateBox[{"1"},
+                  "OutputSizeLimit`Skeleton"], "]"}]}], 
+               RowBox[{
+                RowBox[{"-", "4"}], "+", "d"}]], "+", 
+              RowBox[{
+               SuperscriptBox["mQ", "2"], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], " ", 
+               RowBox[{"(", 
+                RowBox[{"1", "+", "\[Gamma]"}], ")"}], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"9", " ", 
+                  SuperscriptBox["d", "4"], " ", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    RowBox[{"8", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"3", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}]}], ")"}]}], "-", 
+                 RowBox[{"27", " ", 
+                  SuperscriptBox["d", "3"], " ", 
+                  RowBox[{"(", 
+                   RowBox[{"3", "+", 
+                    RowBox[{"25", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"10", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}]}], ")"}]}], "+", 
+                 RowBox[{"10", " ", 
+                  RowBox[{"(", 
+                   RowBox[{"16", "+", 
+                    RowBox[{"185", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"114", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}]}], ")"}]}], "+", 
+                 RowBox[{"2", " ", 
+                  SuperscriptBox["d", "2"], " ", 
+                  RowBox[{"(", 
+                   RowBox[{"130", "+", 
+                    RowBox[{"1160", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"513", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}]}], ")"}]}], "-", 
+                 RowBox[{"3", " ", "d", " ", 
+                  RowBox[{"(", 
+                   RowBox[{"116", "+", 
+                    RowBox[{"1149", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"585", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}]}], ")"}]}]}], ")"}], 
+               " ", 
+               RowBox[{
+                RowBox[{"intRes", "[", 
+                 RowBox[{"2", ",", "1"}], "]"}], "[", 
+                RowBox[{"1", ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                  "0", ",", "0", ",", "0", ",", "0", ",", "2", ",", "1", ",", 
+                   "1"}], "}"}], ",", 
+                 RowBox[{"4", "-", 
+                  RowBox[{"2", " ", "\[Epsilon]"}]}]}], "]"}]}]}], ")"}]}], 
+           ",", 
+           FractionBox[
+            RowBox[{
+             SuperscriptBox["mQ", "6"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"1200", " ", 
+                   SuperscriptBox["\[Gamma]", "2"], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "142"}], "-", 
+                    RowBox[{"999", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"258", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}], "+", 
+                    RowBox[{"2020", " ", 
+                    SuperscriptBox["\[Gamma]", "6"]}], "+", 
+                    RowBox[{"480", " ", 
+                    SuperscriptBox["\[Gamma]", "8"]}]}], ")"}]}], "+", 
+                  TemplateBox[{"9"},
+                   "OutputSizeLimit`Skeleton"], "+", 
+                  RowBox[{"12", " ", 
+                   SuperscriptBox["d", "2"], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "2464"}], "-", 
+                    RowBox[{"58637", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    TemplateBox[{"3"},
+                    "OutputSizeLimit`Skeleton"], "+", 
+                    RowBox[{"120080", " ", 
+                    SuperscriptBox["\[Gamma]", "10"]}]}], ")"}]}], "-", 
+                  RowBox[{"4", " ", 
+                   SuperscriptBox["d", "3"], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1752"}], "+", 
+                    RowBox[{"158854", " ", 
+                    SuperscriptBox["\[Gamma]", "2"]}], "+", 
+                    RowBox[{"2344233", " ", 
+                    SuperscriptBox["\[Gamma]", "4"]}], "+", 
+                    RowBox[{"5071527", " ", 
+                    SuperscriptBox["\[Gamma]", "6"]}], "+", 
+                    RowBox[{"2429399", " ", 
+                    SuperscriptBox["\[Gamma]", "8"]}], "+", 
+                    RowBox[{"210963", " ", 
+                    SuperscriptBox["\[Gamma]", "10"]}]}], ")"}]}]}], ")"}], 
+                " ", 
+                RowBox[{
+                 RowBox[{"intRes", "[", 
+                  RowBox[{"2", ",", "1"}], "]"}], "[", 
+                 RowBox[{"1", ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                   "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "1", ",",
+                     "1"}], "}"}], ",", 
+                  RowBox[{"4", "-", 
+                   RowBox[{"2", " ", "\[Epsilon]"}]}]}], "]"}]}], "-", 
+               TemplateBox[{"1"},
+                "OutputSizeLimit`Skeleton"], "-", 
+               RowBox[{
+                SuperscriptBox["mQ", "2"], " ", 
+                TemplateBox[{"3"},
+                 "OutputSizeLimit`Skeleton"], " ", 
+                TemplateBox[{"1"},
+                 "OutputSizeLimit`Skeleton"]}]}], ")"}]}], 
+            RowBox[{"16", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "3"}], "+", "d"}], ")"}], " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "2"}], "+", "d"}], ")"}], "2"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "d"}], ")"}], " ", "d", " ", 
+             RowBox[{"(", 
+              RowBox[{"1", "+", "d"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "10"}], "+", 
+               RowBox[{"3", " ", "d"}]}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "8"}], "+", 
+               RowBox[{"3", " ", "d"}]}], ")"}], " ", "\[Gamma]", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", 
+                SuperscriptBox["\[Gamma]", "2"]}], ")"}], "3"]}]], ",", 
+           FractionBox[
+            RowBox[{
+             SuperscriptBox["mQ", "4"], " ", 
+             RowBox[{"(", 
+              TemplateBox[{"1"},
+               "OutputSizeLimit`Skeleton"], ")"}]}], 
+            RowBox[{"8", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "3"}], "+", "d"}], ")"}], " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "2"}], "+", "d"}], ")"}], "2"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "10"}], "+", 
+               RowBox[{"3", " ", "d"}]}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "8"}], "+", 
+               RowBox[{"3", " ", "d"}]}], ")"}], " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}], "2"], " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"1", "+", "\[Gamma]"}], ")"}], "2"]}]], ",", 
+           FractionBox[
+            RowBox[{
+             SuperscriptBox["mQ", "6"], " ", 
+             RowBox[{"(", 
+              TemplateBox[{"1"},
+               "OutputSizeLimit`Skeleton"], ")"}]}], 
+            RowBox[{"8", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "3"}], "+", "d"}], ")"}], " ", 
+             TemplateBox[{"6"},
+              "OutputSizeLimit`Skeleton"], " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"1", "+", "\[Gamma]"}], ")"}], "3"]}]], ",", 
+           FractionBox[
+            RowBox[{
+             SuperscriptBox["mQ", "8"], " ", 
+             RowBox[{"(", 
+              TemplateBox[{"1"},
+               "OutputSizeLimit`Skeleton"], ")"}]}], 
+            RowBox[{"32", " ", 
+             TemplateBox[{"9"},
+              "OutputSizeLimit`Skeleton"], " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               TemplateBox[{"1"},
+                "OutputSizeLimit`Skeleton"], ")"}], "4"]}]], ",", 
+           FractionBox[
+            RowBox[{
+             SuperscriptBox["mQ", "4"], " ", 
+             RowBox[{"(", 
+              TemplateBox[{"1"},
+               "OutputSizeLimit`Skeleton"], ")"}]}], 
+            RowBox[{"4", " ", 
+             TemplateBox[{"6"},
+              "OutputSizeLimit`Skeleton"], " ", 
+             SuperscriptBox[
+              TemplateBox[{"1"},
+               "OutputSizeLimit`Skeleton"], "2"]}]], ",", 
+           TemplateBox[{"1"},
+            "OutputSizeLimit`Skeleton"], ",", 
+           TemplateBox[{"237"},
+            "OutputSizeLimit`Skeleton"], ",", "0", ",", "0", ",", "0", ",", 
+           "0", ",", "0", ",", "0", ",", "0"}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          PaneBox[
+           TagBox[
+            TooltipBox[
+             StyleBox[
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "sizeBriefExplanation"], StandardForm],
+                ImageSizeCache->{39.38671875, {2., 5.}}],
+               StripOnInput->False,
+               DynamicUpdating->True,
+               LineSpacing->{1, 2},
+               LineIndent->0,
+               LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLText",
+              StripOnInput->False],
+             StyleBox[
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+                StandardForm]], DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}, StripOnInput -> False]],
+            Annotation[#, 
+             Style[
+              Dynamic[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+              DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}], "Tooltip"]& ],
+           Alignment->Center,
+           BaselinePosition->Baseline,
+           ImageSize->{Automatic, {25, Full}}], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{32.21484375, {0., 5.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 27, 23375945307414690986, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{37.3125, {0., 5.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 27, 23375945307414690986, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{27.64453125, {0., 5.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 27, 23375945307414690986, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{47.8828125, {0., 5.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[23375945307414690986 === $SessionID, 
+   Out[27], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{3.8481327826963167`*^9, 3.848133755373107*^9, 
+  3.848395141592238*^9, 3.85822860414212*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"00f6c7a7-b657-48fa-88f0-c03142a2d293"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.8350742936476746`*^9, 3.8350743014574084`*^9}, {
+   3.8352447687463036`*^9, 3.8352447831910353`*^9}, {3.8352451721123743`*^9, 
+   3.835245221587992*^9}, {3.8352452690927954`*^9, 3.8352453390033326`*^9}, {
+   3.8352456032006335`*^9, 3.835245657643591*^9}, {3.8352460310658894`*^9, 
+   3.835246039457142*^9}, {3.8352473314698987`*^9, 3.835247357952498*^9}, {
+   3.835247438216567*^9, 3.835247443173547*^9}, {3.835259952825116*^9, 
+   3.8352599591738243`*^9}, {3.835351128174939*^9, 3.8353511559277697`*^9}, {
+   3.8413799544408884`*^9, 3.8413800125948687`*^9}, 3.8413842084311132`*^9, {
+   3.841384307131451*^9, 3.8413843274887094`*^9}, {3.8413869923957396`*^9, 
+   3.8413869968172417`*^9}, {3.8413872125782022`*^9, 3.841387214243162*^9}, {
+   3.841416881488479*^9, 3.841416881767373*^9}, {3.8414169279435806`*^9, 
+   3.8414169305407896`*^9}, {3.841813160314668*^9, 3.841813171184014*^9}, {
+   3.841813596814359*^9, 3.841813601248534*^9}, {3.841818637756341*^9, 
+   3.8418186400440493`*^9}, {3.8418496463403006`*^9, 3.841849671370863*^9}, {
+   3.841860772527609*^9, 3.8418607824143906`*^9}, {3.84186084448448*^9, 
+   3.8418608577232637`*^9}, {3.841861017767589*^9, 3.8418610204130373`*^9}, {
+   3.8418860760913363`*^9, 3.8418860903650937`*^9}, 3.842071930618932*^9, 
+   3.8420724433324876`*^9},
+ CellLabel->"In[28]:=",ExpressionUUID->"8aac96b0-a46a-4e1b-9933-c299e0527033"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.841861455973846*^9, 3.841861460196787*^9}, {
+   3.841886482199703*^9, 3.8418864835249405`*^9}, {3.8420724633561077`*^9, 
+   3.8420724651614003`*^9}, {3.8437130172021065`*^9, 3.84371301733357*^9}, {
+   3.843971892632262*^9, 3.843971892801549*^9}, {3.8443365996303134`*^9, 
+   3.844336599941679*^9}, {3.8443366395853224`*^9, 3.844336661455265*^9}, 
+   3.8450110359355288`*^9},
+ CellLabel->"In[29]:=",ExpressionUUID->"37676d10-4708-4ffe-9735-3d05248c9f99"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Intcs1Reduced", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+      "\"\<IBPreduced/Diagcs1ReducedLR.wl\>\""}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<IBPreduced/Diagcs1ReducedLR.wl\>\"", ",", "diagcs1Int"}], 
+   "]"}], ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{
+  3.841861463042061*^9, 3.841886478024395*^9, {3.842072467039589*^9, 
+   3.842072468310842*^9}, {3.8437130145104322`*^9, 3.8437130146601553`*^9}, {
+   3.843971895413032*^9, 3.8439718955526714`*^9}, 3.8443366019882016`*^9, {
+   3.8450110376743803`*^9, 3.8450110536882915`*^9}, {3.848132011188404*^9, 
+   3.848132036393627*^9}, 3.848394772111271*^9, {3.848395186352228*^9, 
+   3.848395186560277*^9}, {3.858224502079884*^9, 3.858224503837569*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"4b31a88a-bb18-4dde-98ab-75ef3d1e83b8"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8443366079912605`*^9, 3.8443366572548313`*^9}, {
+   3.8443532443039227`*^9, 3.844353248634369*^9}, {3.845011032467107*^9, 
+   3.845011032693138*^9}, 3.845647202553588*^9, {3.8456482405362406`*^9, 
+   3.8456482504179544`*^9}, {3.8458933000368137`*^9, 
+   3.8458933363887005`*^9}, {3.8458993371622562`*^9, 3.845899362122443*^9}, 
+   3.845899848817294*^9, {3.8459091438733797`*^9, 3.845909157338316*^9}, 
+   3.8481320085768213`*^9},
+ CellLabel->"In[32]:=",ExpressionUUID->"45f0e8dc-4f44-4f3f-adf8-4215fd543725"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8438143884863005`*^9, 3.843814392333105*^9}, 
+   3.843814438252548*^9, {3.844353256139256*^9, 3.8443532766588697`*^9}, {
+   3.844357899225771*^9, 3.844357916953051*^9}, 3.8450110308013487`*^9},
+ CellLabel->"In[33]:=",ExpressionUUID->"5942c084-8a0d-433d-9c61-dbd43c3ce407"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.8438141095361614`*^9, 3.8438143194973555`*^9, {3.843814417965309*^9, 
+   3.843814440839587*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"cb1d2219-cd1f-4b0d-b472-43c7c1086e6a"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.843814227675476*^9, 3.84381426878679*^9}, {
+   3.843814338248557*^9, 3.8438143599443893`*^9}, {3.8438144047007847`*^9, 
+   3.843814410392773*^9}, 3.8438144525435143`*^9},
+ CellLabel->"In[35]:=",ExpressionUUID->"bc418cee-25b8-4625-9ca4-fc22d6b12686"]
+},
+WindowSize->{1440., 749.25},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+Magnification:>0.8 Inherited,
+FrontEndVersion->"13.0 for Linux x86 (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"155faf98-4008-434d-851a-d5025e4de796"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 148, 3, 23, "Input",ExpressionUUID->"36fe19ec-1e69-443b-b388-07b2a3c1b6a6"],
+Cell[731, 27, 1840, 43, 109, "Print",ExpressionUUID->"149461f5-75fb-4188-b6ef-4038b2724cca"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2608, 75, 196, 3, 23, "Input",ExpressionUUID->"6db95b00-8020-4bd7-945e-d9b05788e10b"],
+Cell[2807, 80, 43701, 1009, 246, "Output",ExpressionUUID->"b428aa2b-65fb-45f1-9737-74f45f481961"]
+}, Open  ]],
+Cell[46523, 1092, 201, 4, 25, "Input",ExpressionUUID->"b7c4b14d-d7ad-4daf-af72-852eff16dee1"],
+Cell[46727, 1098, 3098, 46, 87, "Input",ExpressionUUID->"427d67a9-d03e-4ea6-99d9-cd4a7a3f67d4"],
+Cell[CellGroupData[{
+Cell[49850, 1148, 2224, 69, 232, "Input",ExpressionUUID->"c8db2576-e58a-4b95-916a-6bb0ec377b52"],
+Cell[52077, 1219, 1838, 43, 109, "Print",ExpressionUUID->"fe87cd16-f3f1-41d9-8a86-5d525f4647b0"]
+}, Open  ]],
+Cell[53930, 1265, 1391, 28, 40, "Input",ExpressionUUID->"6ed8431f-0421-4c47-b0be-a8d682fd2014"],
+Cell[55324, 1295, 1409, 21, 57, "Input",ExpressionUUID->"fb90ddd7-cbef-47fe-b2c5-7185685b8553"],
+Cell[CellGroupData[{
+Cell[56758, 1320, 7641, 191, 187, "Input",ExpressionUUID->"a9afdb65-e1e3-4e07-bbba-0cb6db572dd4"],
+Cell[64402, 1513, 12455, 337, 209, "Output",ExpressionUUID->"4c860e78-5a3b-4bbc-880b-092600818ebe"]
+}, Open  ]],
+Cell[76872, 1853, 226, 4, 23, "Input",ExpressionUUID->"e5d60369-2fff-44d5-8e81-c369bdd8664e"],
+Cell[77101, 1859, 324, 4, 23, "Input",ExpressionUUID->"1b84043f-6c0f-44c7-bbb3-408789a6f268"],
+Cell[77428, 1865, 2661, 64, 171, "Input",ExpressionUUID->"b2efeadb-814a-4200-a876-9deb5ba126b5"],
+Cell[CellGroupData[{
+Cell[80114, 1933, 3705, 82, 74, "Input",ExpressionUUID->"338a9da5-f306-414e-ba69-df5462ce9398"],
+Cell[83822, 2017, 23090, 570, 283, "Output",ExpressionUUID->"00f6c7a7-b657-48fa-88f0-c03142a2d293"]
+}, Open  ]],
+Cell[106927, 2590, 1439, 19, 40, "Input",ExpressionUUID->"8aac96b0-a46a-4e1b-9933-c299e0527033"],
+Cell[108369, 2611, 502, 7, 23, "Input",ExpressionUUID->"37676d10-4708-4ffe-9735-3d05248c9f99"],
+Cell[108874, 2620, 981, 20, 58, "Input",ExpressionUUID->"4b31a88a-bb18-4dde-98ab-75ef3d1e83b8"],
+Cell[109858, 2642, 557, 8, 23, "Input",ExpressionUUID->"45f0e8dc-4f44-4f3f-adf8-4215fd543725"],
+Cell[110418, 2652, 321, 4, 23, "Input",ExpressionUUID->"5942c084-8a0d-433d-9c61-dbd43c3ce407"],
+Cell[110742, 2658, 245, 4, 40, "Input",ExpressionUUID->"cb1d2219-cd1f-4b0d-b472-43c7c1086e6a"],
+Cell[110990, 2664, 298, 4, 54, "Input",ExpressionUUID->"bc418cee-25b8-4625-9ca4-fc22d6b12686"]
+}
+]
+*)
+

@@ -1,0 +1,273 @@
+BasisDirectory[v4] = StringDrop[DirectoryName[$Input], -1]
+v4 /: BasisSectors[v4] := Get[StringJoin[BasisDirectory[v4], 
+    "/BasisSectors[v4]"]]
+v4 /: CutDs[v4] := {0, 0, 0, 0, 0, 0, 0, 1, 1}
+v4 /: Definitions[v4] := {Hold[MetricTensor[] === d, SetDim[d]], 
+   Hold[VecQ[k2], Declare[k2, Vector]], Hold[VecQ[k3], Declare[k3, Vector]], 
+   Hold[VecQ[q], Declare[q, Vector]], Hold[VecQ[v1], Declare[v1, Vector]], 
+   Hold[VecQ[v2], Declare[v2, Vector]], Hold[TypeOf[q] === Vector, 
+    Declare[q, Vector]], Hold[TypeOf[v1] === Vector, Declare[v1, Vector]], 
+   Hold[TypeOf[v2] === Vector, Declare[v2, Vector]], 
+   Hold[TypeOf[\[Gamma]] === Untyped, Declare[\[Gamma], Untyped]], 
+   Hold[sp[v1, v1] === 1, sp[v1, v1] = 1], Hold[sp[v2, v2] === 1, 
+    sp[v2, v2] = 1], Hold[sp[q, v1] === 0, sp[q, v1] = 0], 
+   Hold[sp[q, v2] === 0, sp[q, v2] = 0], Hold[sp[v1, v2] === \[Gamma], 
+    sp[v1, v2] = \[Gamma]]}
+v4 /: Ds[v4] := {sp[k2, k2], sp[k3, k3], sp[k2 - q, k2 - q], 
+   sp[k3 - q, k3 - q], sp[k2 + k3 - q, k2 + k3 - q], sp[k2, v2], sp[k3, v2], 
+   sp[k2, v1], sp[k3, v1]}
+v4 /: EMs[v4] := {q, v1, v2}
+v4 /: IBP[v4] := Get[StringJoin[BasisDirectory[v4], "/IBP[v4]"]]
+v4 /: Information[v4] := (If[ValueQ[v4::usage], 
+    Information[v4, LongForm -> False]]; 
+   Print[Grid[Partition[Union[Replace[Replace[First /@ UpValues[v4] /. 
+          HoldPattern -> HoldForm, 
+         {HoldPattern[HoldForm[(LiteRed`Private`f$_)[v4, __]]] :> 
+           HoldForm[LiteRed`Private`f$[v4, "\[Ellipsis]"]]}, {1}], 
+        {HoldPattern[LiteRed`Private`x$:HoldForm[(LiteRed`Private`f$_)[v4, 
+              ___]]] :> Button[LiteRed`Private`x$, 
+           (SelectionMove[ButtonNotebook[], All, GeneratedCell]; 
+             NotebookDelete[]; Information[Evaluate[LiteRed`Private`x$[[1,
+                0]]], LongForm -> False]; Print[TableForm[Cases[UpValues[v4], 
+                 HoldPattern[LiteRed`Private`a$_ :> LiteRed`Private`b$_] /; 
+                  MatchQ[LiteRed`Private`a$[[1,0]], LiteRed`Private`x$[[1,
+                    0]]]] /. HoldPattern -> HoldForm]]) & , 
+           Appearance -> "Frameless", BaseStyle -> "InformationLink"]}, 
+        {1}]], 5], DefaultBaseStyle -> "InfoGrid"]])
+v4 /: jRules[v4, 0, 0, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 0, 1, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 0, 0, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 0, 1, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 0, 0, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 0, 1, 1, 1, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 0, 0, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 0, 1, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jRules[v4, 0, 1, 0, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 1, 0, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 0, 1, 0, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 1, 0, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 0, 1, 0, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 1, 0, 1, 1, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 0, 1, 0, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 1, 0, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jRules[v4, 0, 1, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 1, 1, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 0, 1, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 1, 1, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 0, 1, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 1, 1, 1, 1, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 0, 1, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 0, 1, 1, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 0, 1, 0, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 0, 1, 0, 1, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 0, 1, 0, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 0, 1, 0, 1, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 0, 1, 0, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 0, 1, 0, 1, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 0, 1, 0, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 0, 1, 0, 1, 1, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 0, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 0, 1, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 0, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 0, 1, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 0, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 0, 1, 1, 1, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 0, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 0, 1, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 0, 0, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 0, 0, 1, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 0, 0, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 0, 0, 1, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 0, 0, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 0, 0, 1, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 0, 0, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 0, 0, 1, 1, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 0, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 0, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 0, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 0, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 0, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 0, 1, 1, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 0, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 0, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 0, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 0, 1, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 0, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 0, 1, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 0, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 0, 1, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 0, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 0, 1, 1, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 1, 0, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 1, 0, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 1, 0, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 1, 0, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 1, 0, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 1, 0, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 1, 0, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 1, 0, 1, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 1, 1, 1, 0, 1, 1]"]]
+v4 /: jRules[v4, 1, 1, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jRules[v4, 1, 1, 1, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 0, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 0, 1, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 0, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 0, 1, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 0, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 0, 1, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 1, 0, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 1, 0, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 1, 0, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 1, 0, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 1, 0, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 1, 0, 1, 1, 1, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 1, 0, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 1, 0, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 1, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 1, 1, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 1, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 1, 1, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 1, 1, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 1, 1, 1, 1, 1, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 0, 1, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 0, 1, 1, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 0, 0, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 0, 0, 1, 0, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 0, 0, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 0, 0, 1, 0, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 0, 0, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 0, 0, 1, 1, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 0, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 0, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 0, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 0, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 0, 1, 1, 1, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 0, 1, 1, 1, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 0, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 0, 1, 1, 1, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 1, 1, 0, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 1, 1, 0, 0, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 1, 1, 0, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 1, 1, 0, 0, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 1, 1, 0, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 1, 1, 0, 1, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 1, 1, 1, 0, 0, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 1, 1, 1, 0, 0, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 1, 1, 1, 0, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 1, 1, 1, 0, 1, 1, 1]"]]
+v4 /: jSymmetries[v4, 1, 1, 1, 1, 1, 1, 1, 1, 1] := 
+  Get[StringJoin[BasisDirectory[v4], 
+    "/jSymmetries[v4, 1, 1, 1, 1, 1, 1, 1, 1, 1]"]]
+v4 /: LI[v4] := Get[StringJoin[BasisDirectory[v4], "/LI[v4]"]]
+v4 /: LMs[v4] := {k2, k3}
+v4 /: MappedSectors[v4] := Get[StringJoin[BasisDirectory[v4], 
+    "/MappedSectors[v4]"]]
+v4 /: MIs[v4] := {j[v4, 0, 0, 1, 1, 1, 0, 0, 1, 1], 
+   j[v4, 1, 1, 0, 0, 1, 0, 0, 1, 1], j[v4, 0, 0, 1, 1, 1, 0, 1, 1, 1], 
+   j[v4, 0, 1, 0, 1, 1, 1, 0, 1, 1], j[v4, 1, 1, 0, 0, 1, 0, 1, 1, 1], 
+   j[v4, 1, 1, 1, 1, 0, 0, 0, 1, 1], j[v4, 0, 1, 0, 1, 1, 2, 0, 1, 1], 
+   j[v4, 0, 0, 1, 1, 1, 1, 1, 1, 1], j[v4, 1, 1, 0, 0, 1, 1, 1, 1, 1], 
+   j[v4, 1, 1, 1, 1, 0, 0, 1, 1, 1], j[v4, 1, 1, 1, 1, 0, 1, 1, 1, 1]}
+v4 /: NonZeroSectors[v4] := Get[StringJoin[BasisDirectory[v4], 
+    "/NonZeroSectors[v4]"]]
+v4 /: SimpleSectors[v4] := Get[StringJoin[BasisDirectory[v4], 
+    "/SimpleSectors[v4]"]]
+v4 /: SPs[v4] := {sp[k2, k2], sp[k2, k3], sp[k2, q], sp[k2, v1], sp[k2, v2], 
+   sp[k3, k3], sp[k3, q], sp[k3, v1], sp[k3, v2]}
+v4 /: SR[v4] := Get[StringJoin[BasisDirectory[v4], "/SR[v4]"]]
+v4 /: Toj[v4] := {sp[k2, k2] -> j[v4, -1, 0, 0, 0, 0, 0, 0, 0, 0], 
+   sp[k2, k3] -> (-j[v4, 0, 0, -1, 0, 0, 0, 0, 0, 0] - 
+      j[v4, 0, 0, 0, -1, 0, 0, 0, 0, 0] + j[v4, 0, 0, 0, 0, -1, 0, 0, 0, 0] + 
+      sp[q, q])/2, sp[k2, q] -> (j[v4, -1, 0, 0, 0, 0, 0, 0, 0, 0] - 
+      j[v4, 0, 0, -1, 0, 0, 0, 0, 0, 0] + sp[q, q])/2, 
+   sp[k2, v1] -> j[v4, 0, 0, 0, 0, 0, 0, 0, -1, 0], 
+   sp[k2, v2] -> j[v4, 0, 0, 0, 0, 0, -1, 0, 0, 0], 
+   sp[k3, k3] -> j[v4, 0, -1, 0, 0, 0, 0, 0, 0, 0], 
+   sp[k3, q] -> (j[v4, 0, -1, 0, 0, 0, 0, 0, 0, 0] - j[v4, 0, 0, 0, -1, 0, 0, 
+       0, 0, 0] + sp[q, q])/2, sp[k3, v1] -> j[v4, 0, 0, 0, 0, 0, 0, 0, 0, 
+     -1], sp[k3, v2] -> j[v4, 0, 0, 0, 0, 0, 0, -1, 0, 0]}
+v4 /: UniqueSectors[v4] := Get[StringJoin[BasisDirectory[v4], 
+    "/UniqueSectors[v4]"]]
+v4 /: ZerojRule[v4] := LiteRed`Private`jjj:j[v4, __] :> 
+   0 /; Module[{LiteRed`Private`jjs = 
+       Rest[List @@ jSector[LiteRed`Private`jjj]]}, 
+     Or @@ (BitOr[LiteRed`Private`jjs, #1] === #1 & ) /@ 
+       {{1, 1, 1, 1, 1, 1, 1, 1, 0}, {1, 1, 1, 1, 1, 1, 1, 0, 1}, 
+        {0, 1, 1, 0, 1, 1, 1, 1, 1}, {0, 1, 1, 1, 0, 1, 1, 1, 1}, 
+        {1, 1, 1, 0, 0, 1, 1, 1, 1}, {1, 1, 0, 1, 0, 1, 1, 1, 1}, 
+        {1, 0, 1, 1, 0, 1, 1, 1, 1}, {1, 0, 0, 1, 1, 1, 1, 1, 1}}]
+v4 /: ZeroSectors[v4] := Get[StringJoin[BasisDirectory[v4], 
+    "/ZeroSectors[v4]"]]
+v4::usage = "2-loop basis with 3 external momenta.\nUse Information[v4] to \
+get basis summary.\nThis string can be redefined by setting \
+v4::usage=\"\[Ellipsis]\""; Information[v4, LongForm -> False]; 
+LiteRed`Private`CheckDefs[v4]
+BasisDirectory[v4]

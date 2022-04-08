@@ -1,0 +1,44 @@
+{j[v4, (n1_)?Positive, (n2_)?Positive, (n3_)?NonPositive, (n4_)?Positive] /; 
+    !(n3 == 0 || n4 == 1) -> 
+  -(((2 + n3 - n4)*\[Gamma]*j[v4, n1, n2, 1 + n3, -1 + n4])/(-1 + n4)) + 
+   ((1 + n3)*j[v4, n1, n2, 2 + n3, -2 + n4])/(-1 + n4), 
+ j[v4, (n1_)?Positive, (n2_)?Positive, (n3_)?NonPositive, (n4_)?Positive] /; 
+    !(n2 == 1 || n3 == 0) -> 
+  ((1 + n3)*(-1 + \[Gamma])*(1 + \[Gamma])*j[v4, n1, -1 + n2, 2 + n3, n4])/
+    (4*(-1 + n2)) + \[Gamma]*j[v4, n1, n2, 1 + n3, -1 + n4] + 
+   ((1 + n3)*(-1 + \[Gamma])*(1 + \[Gamma])*j[v4, -1 + n1, -1 + n2, 2 + n3, 
+      n4])/(4*(-1 + n2)*sp[q, q]) - ((1 + n3)*(-1 + \[Gamma])*(1 + \[Gamma])*
+     j[v4, n1, -2 + n2, 2 + n3, n4])/(4*(-1 + n2)*sp[q, q]), 
+ j[v4, (n1_)?Positive, (n2_)?Positive, (n3_)?NonPositive, (n4_)?Positive] /; 
+    !(n1 == 1 || n3 == 0) -> 
+  ((1 + n3)*(-1 + \[Gamma])*(1 + \[Gamma])*j[v4, -1 + n1, n2, 2 + n3, n4])/
+    (4*(-1 + n1)) + \[Gamma]*j[v4, n1, n2, 1 + n3, -1 + n4] - 
+   ((1 + n3)*(-1 + \[Gamma])*(1 + \[Gamma])*j[v4, -2 + n1, n2, 2 + n3, n4])/
+    (4*(-1 + n1)*sp[q, q]) + ((1 + n3)*(-1 + \[Gamma])*(1 + \[Gamma])*
+     j[v4, -1 + n1, -1 + n2, 2 + n3, n4])/(4*(-1 + n1)*sp[q, q]), 
+ j[v4, (n1_)?Positive, (n2_)?Positive, (n3_)?NonPositive, (n4_)?Positive] /; 
+   n4 != 1 -> -((n3*\[Gamma]*j[v4, n1, n2, 1 + n3, -1 + n4])/(-1 + n4)) - 
+   (2*n2*j[v4, n1, 1 + n2, n3, -2 + n4])/(-1 + n4) - 
+   (2*n1*j[v4, 1 + n1, n2, n3, -2 + n4])/(-1 + n4), 
+ j[v4, (n1_)?Positive, (n2_)?Positive, (n3_)?NonPositive, (n4_)?Positive] /; 
+   n2 != 1 -> j[v4, -1 + n1, n2, n3, n4]/sp[q, q] + 
+   ((-1 - d + 2*n1 + n2 + n3 + n4)*j[v4, n1, -1 + n2, n3, n4])/
+    ((-1 + n2)*sp[q, q]), 
+ j[v4, (n1_)?Positive, (n2_)?Positive, (n3_)?NonPositive, (n4_)?Positive] /; 
+   n1 != 1 -> ((-1 - d + n1 + 2*n2 + n3 + n4)*j[v4, -1 + n1, n2, n3, n4])/
+    ((-1 + n1)*sp[q, q]) + j[v4, n1, -1 + n2, n3, n4]/sp[q, q], 
+ j[v4, (n1_)?Positive, (n2_)?Positive, (n3_)?NonPositive, (n4_)?Positive] /; 
+   n4 != 1 -> -((n3*\[Gamma]*j[v4, n1, n2, 1 + n3, -1 + n4])/(-1 + n4)) + 
+   j[v4, 1 + n1, -1 + n2, n3, n4] + 
+   (n3*\[Gamma]*j[v4, 1 + n1, -1 + n2, 1 + n3, -1 + n4])/(-1 + n4) - 
+   (2*n2*j[v4, 1 + n1, 1 + n2, n3, -2 + n4]*sp[q, q])/(-1 + n4) + 
+   (2*(1 + n1)*j[v4, 2 + n1, n2, n3, -2 + n4]*sp[q, q])/(-1 + n4), 
+ j[v4, (n1_)?Positive, (n2_)?Positive, (n3_)?NonPositive, (n4_)?Positive] /; 
+   n1 == 1 && n2 == 1 && n4 == 1 && n3 != 0 -> 
+  ((1 + n3)*(-1 + \[Gamma])*(1 + \[Gamma])*j[v4, 0, 1, 2 + n3, 1])/
+    (4*(-4 + d - n3)) - ((1 + n3)*(-1 + \[Gamma])*(1 + \[Gamma])*
+     j[v4, 1, 0, 2 + n3, 1])/(4*(-4 + d - n3)) + 
+   j[v4, 2, 0, n3, 1]/(-4 + d - n3) - 
+   ((1 + n3)*(-1 + \[Gamma])*(1 + \[Gamma])*j[v4, 1, 1, 2 + n3, 1]*sp[q, q])/
+    (4*(-4 + d - n3)) - (\[Gamma]*j[v4, 2, 1, 1 + n3, 0]*sp[q, q])/
+    (-4 + d - n3)}

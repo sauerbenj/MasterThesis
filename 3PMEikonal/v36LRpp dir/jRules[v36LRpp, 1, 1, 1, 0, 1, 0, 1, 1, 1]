@@ -1,0 +1,4 @@
+{j[v36LRpp, (n1_)?Positive, (n2_)?Positive, (n3_)?Positive, 
+    (n4_)?NonPositive, (n5_)?Positive, (n6_)?NonPositive, (n7_)?Positive, 
+    (n8_)?Positive, (n9_)?Positive] /; True :> 
+  Expand[j[v36LRpp, n4, n3, n2, n1, n5, n7, n6, n9, n8]]}
